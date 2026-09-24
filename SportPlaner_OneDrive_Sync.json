@@ -1,0 +1,21 @@
+{
+  "app": "SportPlaner_SacreCoeur",
+  "version": "2.0",
+  "author": "Mag. Florian Tintel",
+  "school": "Gymnasium Sacre Coeur Wien",
+  "exportedAt": "2026-09-24T12:00:00.000Z",
+  "info": "Diese Datei dient zur automatischen Synchronisation des SportPlaners zwischen Schul-PC, Heim-PC und Smartphone über OneDrive.",
+  "turngewand": {
+    "3ce": [],
+    "4B": [],
+    "1A": [],
+    "2C": []
+  },
+  "savedLessons": [
+    {
+      "id": "preset_la_dreikampf",
+      "title": "Leichtathletik-Dreikampf: Laufen, Springen & Werfen",
+      "savedAt": "2026-09-24T12:00:00.000Z"
+    }
+  ]
+}
