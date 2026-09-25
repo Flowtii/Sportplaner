@@ -9868,9 +9868,9 @@
 
       const className = TG_CLASSES[targetClass] || targetClass;
       if (filterMaleOnly && femaleCount > 0) {
-        showToast(${cleaned.length} Knaben f\u00FCr  gespeichert ( Sch\u00FClerinnen herausgefiltert).);
+        showToast(cleaned.length + ' Knaben f\u00FCr ' + className + ' gespeichert (' + femaleCount + ' Sch\u00FClerinnen herausgefiltert).');
       } else {
-        showToast(Klassenliste f\u00FCr  mit  Sch\u00FClern gespeichert!);
+        showToast('Klassenliste f\u00FCr ' + className + ' mit ' + cleaned.length + ' Sch\u00FClern gespeichert!');
       }
     }
 
@@ -9878,14 +9878,14 @@
       const select = document.getElementById('wu-class-select');
       const targetClass = (select && select.value) || CURRENT_TG_CLASS || '3ce_3de';
       const className = TG_CLASSES[targetClass] || targetClass;
-      if (!confirm(M\u00F6chtest du die Klassenliste f\u00FCr "" wirklich leeren?)) return;
+      if (!confirm('M\u00F6chtest du die Klassenliste f\u00FCr "' + className + '" wirklich leeren?')) return;
       const rosters = getTurngewandRosters();
       rosters[targetClass] = [];
       saveTurngewandRosters(rosters);
       closeWebUntisModal();
       CURRENT_TG_CLASS = targetClass;
       renderTurngewandView();
-      showToast(Klassenliste f\u00FCr  zur\u00FCckgesetzt);
+      showToast('Klassenliste f\u00FCr ' + className + ' zur\u00FCckgesetzt');
     }
 
     function selectRosterStudent(name) {
@@ -9893,7 +9893,7 @@
       if (input) {
         input.value = name;
         input.focus();
-        showToast(${name} ausgew\u00E4hlt);
+        showToast(name + ' ausgew\u00E4hlt');
       }
     }
     let CURRENT_TG_CLASS = '3ce_3de';
