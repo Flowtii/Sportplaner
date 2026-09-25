@@ -1501,14 +1501,14 @@
           <div class="form-group">
             <label>3. Fachbereich</label>
             <select id="gen-category" class="form-control" onchange="updateTopicsDropdown()">
-              <option value="leichtathletik" selected>Leichtathletik (Sprint, Sprung, Wurf, Lauf)</option>
-              <option value="ball">Gro&szlig;e Sportspiele (Basketball, Handball, Fu&szlig;ball, etc.)</option>
-              <option value="spiele">Kleine Spiele, Fang- &amp; Parteiballspiele</option>
-              <option value="motorik">Motorik &amp; Koordinative F&auml;higkeiten (Warwitz / Hirtz)</option>
-              <option value="fitness">Kraft, Kondition &amp; Zirkeltraining</option>
-              <option value="turnen">Ger&auml;tturnen (Turn10) &amp; Akrobatik</option>
-              <option value="kampfklettern">Zweikampf, Klettern &amp; Trendsport</option>
-              <option value="tests">Motorische Diagnostik &amp; Leistungstests</option>
+              <option value="leichtathletik" selected>ðŸƒ Leichtathletik (Sprint, Sprung, Wurf, Ausdauer)</option>
+              <option value="ball">ðŸ€ Gro&szlig;e Sportspiele &amp; Trendsport (Basketball, Spikeball, Tchoukball, etc.)</option>
+              <option value="spiele">ðŸŽ² Kleine Spiele, Burner Games &amp; Kooperation</option>
+              <option value="motorik">ðŸ§  Motorik &amp; Koordinative F&auml;higkeiten (Warwitz, Hirtz, Agility)</option>
+              <option value="fitness">âš¡ Kraft, Fitness &amp; Zirkeltraining (Tabata, Hyrox Teens)</option>
+              <option value="turnen">ðŸ¤¸ Ger&auml;tturnen (Turn10), Akrobatik &amp; Parkour</option>
+              <option value="kampfklettern">ðŸ§— Zweikampf, Bouldern / Klettern &amp; Ninja Warrior</option>
+              <option value="tests">ðŸ“‹ Motorische Diagnostik &amp; Leistungstests (Klug &amp; Fit, Schwimmen)</option>
             </select>
           </div>
 
@@ -1689,22 +1689,6 @@
           <div class="sp-meta-item"><strong>Turnsaal / Raum:</strong> <span id="lbl-halle" contenteditable="true" class="editable">Ganzer Turnsaal</span></div>
           <div class="sp-meta-item" style="grid-column: span 2;"><strong>Thema der Einheit:</strong> <span id="lbl-thema" contenteditable="true" class="editable" style="font-weight: 700; color: var(--dark);">Leichtathletik-Dreikampf: Laufen, Springen &amp; Werfen</span></div>
           <div class="sp-meta-item" style="grid-column: span 2;"><strong>P&auml;dagogisch-motorische Zielsetzung:</strong> <span id="lbl-ziel" contenteditable="true" class="editable">Verbesserung der Fu&szlig;gelenksarbeit, Absprungdynamik und Schnelligkeitsausdauer</span></div>
-          <!-- Turngewand & Anwesenheits-Vermerk Block -->
-          <div class="sp-meta-item" style="grid-column: span 4; background: #fff1f2; border: 1px solid #fecdd3; padding: 8px 12px; border-radius: 6px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-              <strong style="color: #9f1239; display: flex; align-items: center; gap: 6px;">
-                <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
-                Turngewand nicht dabei / Abwesenheit (<span id="lbl-turngewand-klasse">3ce / 3de</span>):
-              </strong>
-              <div class="no-print" style="display: flex; gap: 4px;">
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('3ce / 3de')">3ce/3de</button>
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('4B')">4B</button>
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('1A')">1A</button>
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('2C')">2C</button>
-              </div>
-            </div>
-            <div id="lbl-turngewand-notiz" contenteditable="true" class="editable" style="min-height: 22px; font-size: 0.86rem; color: #881337;" placeholder="Namen der Sch&uuml;ler ohne Turngewand hier notieren (z. B. Max M., Sophie K.). Wird automatisch gespeichert und gedruckt.">Keine Vermerke</div>
-          </div>
         </div>
 
         <!-- Timeline Bar (Visualisierung der Stundenteilung) -->
@@ -1917,47 +1901,59 @@
             <label>Spezifische Sportart</label>
             <select id="db-subcat-select" class="form-control" onchange="filterDatabase()">
               <option value="all" selected>-- Alle Sportarten &amp; Themen --</option>
-              <optgroup label="Leichtathletik">
-                <option value="sprint">Sprint &amp; Staffellauf</option>
+              <optgroup label="ðŸƒ Leichtathletik">
+                <option value="sprint">Sprint, H&uuml;rden &amp; Staffellauf</option>
                 <option value="sprung">Weit- &amp; Hochsprung</option>
                 <option value="wurf">Wurf &amp; Sto&szlig; (Schlagball, Kugel)</option>
                 <option value="ausdauer">Ausdauer &amp; Gel&auml;ndelauf</option>
               </optgroup>
-              <optgroup label="Gro&szlig;e Sportspiele">
+              <optgroup label="ðŸ€ Gro&szlig;e Sportspiele">
                 <option value="basketball">Basketball</option>
                 <option value="handball">Handball</option>
-                <option value="fussball">Fu&szlig;ball</option>
+                <option value="fussball">Fu&szlig;ball &amp; Futsal</option>
                 <option value="volleyball">Volleyball</option>
-                <option value="hockey">Floorball &amp; Hockey</option>
-                <option value="frisbee">Ultimate Frisbee</option>
-                <option value="flagfootball">Flag-Football &amp; Rugby</option>
+                <option value="hockey">Floorball &amp; Hallenhockey</option>
+              </optgroup>
+              <optgroup label="ðŸ¥ R&uuml;ckschlag- &amp; Trendsportarten">
+                <option value="spikeball">Spikeball / Roundnet</option>
+                <option value="tchoukball">Tchoukball (Rebound &amp; Fairplay)</option>
+                <option value="pickleball">Pickleball &amp; Street Racket</option>
                 <option value="badminton">Badminton &amp; Schl&auml;ger</option>
+                <option value="frisbee">Ultimate Frisbee &amp; Disc-Golf</option>
+                <option value="flagfootball">Flag-Football &amp; Touch-Rugby</option>
+                <option value="ringtennis">Ringtennis &amp; Tellerwurfspiele</option>
               </optgroup>
-              <optgroup label="Kleine Spiele &amp; Fangen">
-                <option value="fangen">Fangspiele &amp; Ticken</option>
-                <option value="abwurf">Abwurf- &amp; Brennballspiele</option>
-                <option value="teamspiel">50 Teamspiele &amp; Kooperation</option>
+              <optgroup label="ðŸŽ² Kleine Spiele &amp; Burner Games">
+                <option value="burnergames">Burner Games &amp; Fun-Warmups</option>
+                <option value="fangen">Fang- &amp; Reaktionsspiele</option>
+                <option value="abwurf">Abwurf- &amp; Zombieballspiele</option>
+                <option value="teamspiel">Kooperations- &amp; Abenteuerspiele</option>
               </optgroup>
-              <optgroup label="Koordination &amp; Motorik">
-                <option value="koordination_allg">Die 7 F&auml;higkeiten (Hirtz)</option>
+              <optgroup label="ðŸ§  Koordination &amp; Motorik">
+                <option value="koordination_allg">Die 7 koordinativen F&auml;higkeiten (Hirtz)</option>
+                <option value="parcours">Wiener Parcours nach Warwitz</option>
                 <option value="gleichgewicht">Gleichgewicht &amp; Balancieren</option>
-                <option value="rhythmus">Rhythmus &amp; Seilspringen</option>
-                <option value="parcours">Parcours &amp; Warwitz</option>
+                <option value="rhythmus">Rhythmus &amp; Rope Skipping</option>
+                <option value="differenzierung">Kin&auml;sthetische Differenzierung</option>
+                <option value="orientierung">Raumorientierung</option>
+                <option value="reaktion">Reaktion &amp; Umstellung</option>
+                <option value="kopplung">Kopplung &amp; Life Kinetik</option>
               </optgroup>
-              <optgroup label="Kraft &amp; Kondition">
+              <optgroup label="âš¡ Kraft, Fitness &amp; Kondition">
                 <option value="zirkel">Zirkeltraining &amp; Tabata</option>
-                <option value="agility">Agility &amp; H&uuml;tchen</option>
+                <option value="hyrox">Hyrox Teens &amp; Functional Fitness</option>
+                <option value="agility">Agility &amp; Koordinationsleiter</option>
                 <option value="medizinball">Medizinball &amp; Partnerkraft</option>
               </optgroup>
-              <optgroup label="Ger&auml;tturnen &amp; Akrobatik">
-                <option value="turn10">Turn10 (Boden, Barren, Reck, Sprung)</option>
-                <option value="akrobatik">Partner- &amp; Trio-Pyramiden</option>
-                <option value="parkour">Parkour &amp; Bergsteigen</option>
+              <optgroup label="ðŸ¤¸ Ger&auml;tturnen &amp; Akrobatik">
+                <option value="turn10">Turn10 (Boden, Barren, Reck, Kasten, Sprung)</option>
+                <option value="akrobatik">Partner- &amp; Gruppenpyramiden</option>
+                <option value="parkour">Parkour &amp; Freerunning Basics</option>
               </optgroup>
-              <optgroup label="Zweikampf, Klettern &amp; Trends">
+              <optgroup label="ðŸ§— Zweikampf, Klettern &amp; Abenteuer">
                 <option value="kampf">Ringen, Raufen &amp; Zweikampf</option>
-                <option value="klettern">Hallenklettern &amp; Bouldern</option>
-                <option value="tanz">Rhythmik, Hip-Hop &amp; Tanz</option>
+                <option value="klettern">Hallenklettern, Bouldern &amp; Bergsteigen</option>
+                <option value="ninja">Ninja Warrior Challenge</option>
               </optgroup>
             </select>
           </div>
@@ -2418,11 +2414,20 @@
               <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               <span>Ins aktuelle Stundenbild &uuml;bernehmen</span>
             </button>
+            <button class="btn btn-primary btn-sm" onclick="openWebUntisModal()" style="font-weight: 600;">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              <span>ðŸ“‹ Aus WebUntis importieren</span>
+            </button>
             <button class="btn btn-outline btn-sm" onclick="copyTurngewandList()">
               <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               <span>Liste kopieren (WebUntis)</span>
             </button>
           </div>
+            <button class="btn btn-outline btn-sm" onclick="exportTurngewandCsv()" title="Als Excel / CSV Tabelle exportieren">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Excel / CSV</span>
+            </button>
+            <span class="save-pill saved no-print" style="font-size: 0.72rem; padding: 4px 8px;">&#10003; Permanent gespeichert</span>
         </div>
 
         <!-- Klassen-Umschalter -->
@@ -2485,6 +2490,20 @@
             <button class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" onclick="addTurngewandEntry()">
               <span>+ Vermerk speichern</span>
             </button>
+
+            <!-- WebUntis Klassenliste & Schnellauswahl -->
+            <div style="margin-top: 1.25rem; padding: 0.85rem; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 6px;">
+                <div style="font-weight: 700; color: #002B49; display: flex; align-items: center; gap: 6px; font-size: 0.88rem;">
+                  <svg style="width: 16px; height: 16px; color: #0284c7;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span id="tg-roster-title">Klassenliste &amp; Schnellauswahl</span>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="openWebUntisModal()" style="font-size: 0.72rem; padding: 2px 6px;">
+                  <span>ðŸ“‹ WebUntis Liste</span>
+                </button>
+              </div>
+              <div id="tg-roster-container"></div>
+            </div>
           </div>
 
           <!-- Rechte Spalte: Kumulierte Uebersicht & Historie -->
@@ -4577,7 +4596,7 @@
         ref: 'Akrobatik/A4K Wandplakat.xps'
       },
       {
-        id: 'tu_m1_parcours_bergsteigen',
+        id: 'tu_m1_pyramide_gruppe',
         title: 'Geräteparcours zum Thema "Bergsteigen" & Hindernisbahn',
         category: 'turnen',
         subcat: 'parkour',
@@ -7849,8 +7868,671 @@
         org: "Mattenkreis in der Hallenmitte",
         cues: "Aufrechte Brust bei der Hüftdehnung, tief und ruhig in den Bauch ein- und ausatmen.",
         ref: "Regeneration_nach_HIIT_Schule.pdf"
+      },
+      // ==========================================
+      // --- NEU: BURNER GAMES & FUN-WARMUPS ---
+      // ==========================================
+      {
+        id: 'sp_w_pacman_linien',
+        title: 'Pac-Man Linientick (Ghost Hunter)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 8,
+        goal: 'Reaktionsf\u00E4higkeit, Richtungswechsel & Orientierung auf Hallenlinien',
+        desc: 'Alle Sch\u00FCler d\u00FCrfen sich ausschlie\u00DFlich auf den vorgegebenen Hallenlinien (Volleyball, Basketball, Handball) bewegen. 2\u20133 \u201EGeister\u201C (mit Parteib\u00E4ndern) versuchen die Pac-Men zu fangen. Getickte Sch\u00FCler werden ebenfalls zu Geistern. Besondere Regel: Auf Linienkreuzungen darf durch 3 Kniebeugen die Kreuzung f\u00FCr 5 Sekunden blockiert werden.',
+        material: 'Hallenmarkierungslinien, 3-4 Parteib\u00E4nder',
+        org: 'Gesamte Sporthalle, Einzellauf auf Linien',
+        cues: 'Kopf oben behalten, vorausplanen, nicht von den Linien abkommen, Richtungswechsel explosiv abstoppen.',
+        ref: 'Spiele/Burner Games_Ballspiele.pdf'
+      },
+      {
+        id: 'sp_w_ssp_battle',
+        title: 'Schere-Stein-Papier Laufduell (Hopping Battle)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Schnelligkeit, Sprungkraft & spielerische Reaktionsschulung',
+        desc: 'Zwei Teams stehen an entgegengesetzten Enden einer Gasse aus 10\u201312 Gymnastikreifen oder Langb\u00E4nken. Auf Signal springt der Erste jedes Teams beidbeinig von Reifen zu Reifen aufeinander zu. Treffen sie aufeinander: Schere-Stein-Papier im Einbeinstand! Der Sieger h\u00FCpft sofort weiter, der Verlierer scheidet aus und der n\u00E4chste seines Teams sprintet los. Ziel ist das Erreichen der gegnerischen Startbasis.',
+        material: '12 Gymnastikreifen oder 3 Langb\u00E4nke',
+        org: '2 Teams an den Kopfenden der Reifengasse',
+        cues: 'Schnelle Landung auf den Fu\u00DFballen, sofortiger Antritt nach dem Schere-Stein-Papier-Entscheid.',
+        ref: 'Spiele/Aufw\u00E4rmspielesammlung.doc'
+      },
+      {
+        id: 'sp_w_virus_antikoerper',
+        title: 'Virus & Antik\u00F6rper (Zellteilung)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 8,
+        goal: 'Ausdauer, Rumpfkoordination & kooperative Hilfsbereitschaft',
+        desc: '2 Viren versuchen die gesunden Zellen zu fangen. Wer getickt wird, muss sich mit einer Hand an die getroffene Stelle greifen (\u201EInfektion\u201C) und darf sich nur noch humpelnd bewegen. Wird er ein zweites Mal getickt, muss er sich auf den Boden setzen. 3 \u201EAntik\u00F6rper\u201C bewegen sich mit Softb\u00E4llen frei und k\u00F6nnen infizierte Zellen durch Zupassen eines Balls wieder komplett heilen.',
+        material: '3 Softb\u00E4lle, 2 Parteib\u00E4nder f\u00FCr Viren',
+        org: 'Gesamtes Hallenfeld',
+        cues: 'Aufmerksames Umschauen, pr\u00E4zise P\u00E4sse zur Rettung, Viren d\u00FCrfen Antik\u00F6rper nicht blockieren.',
+        ref: 'Spiele/Lauf- und Fangspiele.pdf'
+      },
+      {
+        id: 'sp_w_karottenziehen',
+        title: 'Karottenziehen (Gem\u00FCsegarten & G\u00E4rtner)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'unterstufe',
+        duration: 10,
+        goal: 'K\u00F6rperkontakt-Gew\u00F6hnung, Ganzk\u00F6rperkraft & Kooperation',
+        desc: 'Ein Gro\u00DFteil der Klasse bildet im Kreis auf der Weichbodenmatte eine feste Einheit: Alle liegen b\u00E4uchlings mit den K\u00F6pfen zur Mitte und haken die Arme fest untereinander ein (\u201EKarotten im festen Boden\u201C). 2\u20133 \u201EG\u00E4rtner\u201C versuchen, einzelne Karotten sanft aber bestimmt an den F\u00FC\u00DFen aus dem Beet herauszuziehen. Gelingt es, wird die Karotte zum neuen G\u00E4rtner.',
+        material: '1-2 Weichbodenmatten',
+        org: 'Kreisform b\u00E4uchlings, eng miteinander verhakt',
+        cues: 'Nur an den Beinen/Kn\u00F6cheln fassen, kein Rei\u00DFen an Gelenken, Stopp-Ruf wird sofort respektiert.',
+        ref: 'Spiele/Kleine Spiele (Hollauf).docx'
+      },
+      {
+        id: 'sp_w_fliegender_hollaender',
+        title: 'Fliegender Holl\u00E4nder (Speed-Edition)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 8,
+        goal: 'Antrittsschnelligkeit, periphere Wahrnehmung & Rhythmuswechsel',
+        desc: 'Alle Sch\u00FCler stehen paarweise im Innenstirnkreis und halten sich an den H\u00E4nden. Ein L\u00E4uferpaar umrundet den Kreis im schnellen Trab. Das Paar schl\u00E4gt ein Paar im Kreis ab und ruft laut \u201EFliegender Holl\u00E4nder!\u201C. Das getroffene Paar sprintet sofort in die entgegengesetzte Richtung um den Au\u00DFenkreis. Welches Paar erreicht zuerst die freigewordene L\u00FCcke im Kreis?',
+        material: 'Kein Material erforderlich',
+        org: 'Gro\u00DFer Innenstirnkreis im Paarverband',
+        cues: 'Beim Vorbeilaufen au\u00DFen ausweichen (Rechtsverkehr!), H\u00E4nde fest greifen in der L\u00FCcke.',
+        ref: 'Spiele/Kleine_Spiele_Sammlung.pdf'
+      },
+      {
+        id: 'sp_w_evolution_ssp',
+        title: 'Evolution (Ei - Huhn - Affe - Superheld)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 8,
+        goal: 'Mobilisation der Gelenke, Spa\u00DF & plyometrische Sprungkraft',
+        desc: 'Alle beginnen als \u201EEi\u201C (in tiefer Hocke h\u00FCpfen). Trifft man auf ein anderes Ei: Schere-Stein-Papier! Wer gewinnt, entwickelt sich weiter zum \u201EHuhn\u201C (halbe Hocke, Fl\u00FCgelschlag mit den Ellenbogen), dann zum \u201EAffen\u201C (Vierf\u00FC\u00DFlerlauf mit Trommeln auf die Brust) und schlie\u00DFlich zum \u201ESuperhelden\u201C (stolzer Sprint mit Cape). Wer verliert, f\u00E4llt eine Stufe zur\u00FCck. Superhelden spielen gegeneinander um den Hallenkaiser.',
+        material: 'Kein Material erforderlich',
+        org: 'Freie Hallennutzung im Durcheinander',
+        cues: 'Saubere tiefe Kniebeuge in der Ei-Phase, humorvolles und faires Ausspielen.',
+        ref: 'Verlag schnelle Sportstunde/Die Schnelle Stunde Sport Klasse 3-4 - Teil 1.pdf'
+      },
+      {
+        id: 'sp_w_wuerfelsprint',
+        title: 'W\u00FCrfel-Sprint (Dice Relay in 4 Hallenecken)',
+        category: 'fitness',
+        subcat: 'zirkel',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Intervall-Ausdauer, kognitive Umsetzung & Ganzk\u00F6rperaktivierung',
+        desc: 'In den vier Hallenecken liegt je ein Schaumstoffw\u00FCrfel. Die Sch\u00FCler sind in 4 Riegen eingeteilt. Der erste L\u00E4ufer sprintet zum W\u00FCrfel, w\u00FCrfelt und f\u00FChrt die gew\u00FCrfelte Nummer aus: 1 = Sprint zur Mittellinie und zur\u00FCck, 2 = 5 Kniebeugen mit Strecksprung, 3 = Wandsitz an der Sprossenwand (10s), 4 = 10 Bergsteiger (Mountain Climbers), 5 = Krebsgang um den Mittelkreis, 6 = Joker (direkt abklatschen). Nach der Aufgabe sprintet er zur\u00FCck und klatscht den N\u00E4chsten ab.',
+        material: '4 Schaumstoffw\u00FCrfel, 4 H\u00FCtchen',
+        org: '4 Riegen in den Hallenecken',
+        cues: 'Tempo hochhalten, \u00DCbungen technisch sauber ausf\u00FChren, Teamkameraden anfeuern.',
+        ref: 'Staffelspiele/Staffelspiele mit Geraetekombinationen.doc'
+      },
+      {
+        id: 'sp_w_vip_bodyguard',
+        title: 'VIP & Bodyguards (Pr\u00E4sidentenschutz)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Reaktionsf\u00E4higkeit, Agilit\u00E4t & Team-Verantwortung',
+        desc: 'Die Klasse teilt sich in 3er-Teams: Ein \u201EVIP\u201C in der Mitte und zwei \u201EBodyguards\u201C, die sich sch\u00FCtzend vor und hinter den VIP stellen (ohne ihn festzuhalten). 4 Sch\u00FCler agieren als \u201EPaparazzi / Attent\u00E4ter\u201C und werfen aus der Distanz mit Softb\u00E4llen auf den VIP. Die Bodyguards m\u00FCssen die B\u00E4lle mit Armen, Beinen oder Brust abwehren. Trifft ein Ball den VIP, wechseln die Rollen.',
+        material: '4-6 Softb\u00E4lle, Parteib\u00E4nder',
+        org: 'Freies Hallenfeld, 3er-Formationen',
+        cues: 'Aktive Beinarbeit der Bodyguards, Drehungen im Verbund, kein Werfen auf den Kopf.',
+        ref: 'Spiele/Abwurfspiele.pdf'
+      },
+      {
+        id: 'sp_w_krebs_spinnen',
+        title: 'Krebs- & Spinnen-Fangen (Invertierte Fortbewegung)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 8,
+        goal: 'Schulter- und Handgelenks-Stabilit\u00E4t, Rumpfkraft & Koordination',
+        desc: 'Gefangen wird im Bereich der Turnmatten. 3 F\u00E4nger bewegen sich im \u201ESpinnengang\u201C (normaler Vierf\u00FC\u00DFler, Bauch zeigt nach unten). Alle Gejagten bewegen sich im \u201EKrebsgang\u201C (umgekehrter Vierf\u00FC\u00DFler, Bauch zeigt zur Decke, Ges\u00E4\u00DF ber\u00FChrt nie den Boden). Wer getickt wird, wechselt die Rolle. Enorm hohe Belastung f\u00FCr Schulterg\u00FCrtel und Trizeps!',
+        material: 'Mehrere Turnmatten als Spielzone',
+        org: 'Begrenztes Mattenfeld',
+        cues: 'Becken hochhalten, Schultern aktiv stabilisieren, H\u00E4nde flach aufsetzen.',
+        ref: 'Koordination/8. Einheit \u2013 Reaktions- und Umstellungsf\u00E4higkeit.docx'
+      },
+      {
+        id: 'sp_w_zauberer_fee',
+        title: 'Zauberer & Fee (Befreiung durch Tunnelgang)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'unterstufe',
+        duration: 8,
+        goal: 'Schnelligkeit, Beweglichkeit & Kooperation',
+        desc: '2 \u201EZauberer\u201C mit Schaumstoffst\u00E4ben (\u201EZauberst\u00E4be\u201C) ber\u00FChren die Sch\u00FCler. Wer ber\u00FChrt wird, erstarrt zur Salzs\u00E4ule in Gr\u00E4tschstellung mit erhobenen Armen. 2 \u201EFeen\u201C k\u00F6nnen die Verzauberten erl\u00F6sen, indem sie durch deren Beine hindurchkrabbeln (\u201ETunneldurchgang\u201C). Regelm\u00E4\u00DFiger Rollenwechsel nach 2 Minuten.',
+        material: '2 Schaumstoff-Schwimmnudeln / Zauberst\u00E4be',
+        org: 'Gesamte Halle',
+        cues: 'Weite Gr\u00E4tsche f\u00FCr sicheren Durchschlupf, Zauberer d\u00FCrfen nicht an den Tunnels campen.',
+        ref: 'Spiele/Lauf- und Fangspiele.pdf'
+      },
+      {
+        id: 'sp_w_mattenkoenig_soft',
+        title: 'Mattenk\u00F6nig (Soft-Rugby Warmup)',
+        category: 'spiele',
+        subcat: 'burnergames',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Dynamische Passfolgen, Orientierung & Raumaufteilung',
+        desc: 'Zwei Teams spielen mit einem Rugby- oder Schaumstoffball gegeneinander. An den beiden Stirnseiten der Halle liegt je eine Weichbodenmatte. Punkte werden erzielt, wenn ein Sch\u00FCler auf die Matte springt und dort den zugespielten Ball f\u00E4ngt, ohne dass der Ball den Boden ber\u00FChrt. Mit dem Ball in der Hand d\u00FCrfen nur 3 Schritte gemacht werden. Kein K\u00F6rperkontakt erlaubt!',
+        material: '2 Weichbodenmatten, 1 Rugbyball (Schaumstoff), Parteib\u00E4nder',
+        org: 'Hallenl\u00E4nge, 2 Weichb\u00F6den als Endzonen',
+        cues: 'Freilaufen in freie R\u00E4ume, steile P\u00E4sse in die Tiefe antizipieren, sicheres Landen auf der Matte.',
+        ref: 'Spiele/"Touch"-Rugby - Ein faires und leicht zu erlernendes Sportspiel.pdf'
+      },
+
+      // ==========================================
+      // --- NEU: SPIKEBALL / ROUNDNET ---
+      // ==========================================
+      {
+        id: 'rn_w_spike_reaktion',
+        title: 'Roundnet-Warmup: Reifenprellen & 360\u00B0-Antritt',
+        category: 'ball',
+        subcat: 'spikeball',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Auge-Hand-Koordination, Reaktionsschnelligkeit & 360-Grad Antritt',
+        desc: 'Paarweise Aufstellung um Gymnastikreifen oder Spikeball-Netze. Ballgew\u00F6hnung: Ball mit der flachen Hand in den Reifen schlagen, Partner \u00FCbernimmt nach Bodenkontakt mit der Handkante oder Handfl\u00E4che. Anschlie\u00DFend: 10er-Rallye mit 2 Kontakten pro Spieler (Annahme hoch, Zuspiel in den Reifen).',
+        material: 'Spikeball-B\u00E4lle oder Minivolleyb\u00E4lle, Gymnastikreifen / Spikeball-Sets',
+        org: 'Paare im Umkreis um Reifen',
+        cues: 'Tiefe Grundstellung, beweglich auf den Fu\u00DFballen bleiben, Handgelenk fixieren.',
+        ref: 'SportPlaner Spikeball Modul'
+      },
+      {
+        id: 'rn_m1_spike_grundschlag',
+        title: 'Spikeball Technik: Angabe, Zuspiel & Netzaufsetzer',
+        category: 'ball',
+        subcat: 'spikeball',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'Pr\u00E4zise Schlagtechnik auf das Trampolinnetz & Zusammenspiel im 2er-Team',
+        desc: 'Stationen an 3\u20134 Spikeball-Sets: \u00DCbung 1: Korrekte Angabe hinter der 1,8m-Linie (flach oder Drop-Shot). \u00DCbung 2: Annahme nach Netzaufsetzer und hohes Zuspiel (\u201ESet\u201C) f\u00FCr den Partner. \u00DCbung 3: Fester Angriffsschlag (\u201ESpike\u201C) nach unten ins Netz. Jedes Team hat maximal 3 Ber\u00FChrungen vor dem Netztreffer.',
+        material: '3-4 Spikeball-Sets, B\u00E4lle',
+        org: '4er-Gruppen pro Spikeball-Set',
+        cues: 'Nicht ins Netz fallen, Zuspiel \u00FCber Augenh\u00F6he des Partners bringen, 360\u00B0-Freiheit nutzen.',
+        ref: 'SportPlaner Spikeball Modul'
+      },
+      {
+        id: 'rn_m2_spike_kaiserturnier',
+        title: 'Spikeball Kaiserturnier: 2v2 Auf- und Abstieg',
+        category: 'ball',
+        subcat: 'spikeball',
+        phase: 'main2',
+        ageGroup: 'alle',
+        duration: 18,
+        goal: 'Wettkampfform, taktische Positionierung & Fair Play',
+        desc: 'Turnierform \u00FCber mehrere Netze (Kaiserfeld, Mittelfelder, Verliererfeld). 2v2-Matches auf Zeit (3 Minuten pro Runde). Das siegreiche Team steigt ein Feld nach oben Richtung Kaiserfeld auf, das unterlegene ein Feld nach unten. Nach 5 Runden wird der Kaiser-Champion gek\u00FCrt. Bei Behinderung (\u201EHinder\u201C) wird der Ballwechsel wiederholt.',
+        material: '3-5 Spikeball-Sets, Spielstandskarten',
+        org: 'Mehrere Stationen in der Halle verteilt',
+        cues: 'Rund um das Netz verteilen, keine Seite ist tabu, Fairplay bei Hinder-Entscheidungen.',
+        ref: 'SportPlaner Spikeball Modul'
+      },
+      {
+        id: 'rn_c_spike_mobilisation',
+        title: 'Handgelenks- & Schulter-Regeneration nach Roundnet',
+        category: 'ball',
+        subcat: 'spikeball',
+        phase: 'cool',
+        ageGroup: 'alle',
+        duration: 5,
+        goal: 'Entlastung des Handgelenks, Dehnung der Rotatorenmanschette & Pulsregulierung',
+        desc: 'Auslockern der Unterarme im Kreis: Wellenbewegungen der H\u00E4nde, passives Dehnen der Handbeuger und -strecker (Arm nach vorne strecken, Finger sanft nach hinten ziehen). Schulterkreisen mit tiefen Atemz\u00FCgen.',
+        material: 'Kein Material erforderlich',
+        org: 'Innenstirnkreis',
+        cues: 'Schultern locker h\u00E4ngen lassen, Dehnung ohne Schmerz halten, tief in den Bauch atmen.',
+        ref: 'SportPlaner Spikeball Modul'
+      },
+
+      // ==========================================
+      // --- NEU: TCHOUKBALL ---
+      // ==========================================
+      {
+        id: 'tb_w_pass_dreieck',
+        title: 'Tchoukball-Warmup: 3-P\u00E4sse-Rhythmus im Dreieck',
+        category: 'ball',
+        subcat: 'tchoukball',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Ballkontrolle, Passtiming & Erarbeitung der 3-P\u00E4sse-Regel',
+        desc: 'In 4er-Gruppen: Passstaffeln mit Tchoukball- oder Handb\u00E4llen. Regeln von Beginn an verinnerlichen: Maximal 3 Schritte mit dem Ball, maximal 3 Sekunden Ballbesitz, maximal 3 P\u00E4sse vor dem Abschluss. Wechsel von Druckpass, Schlagwurf und Aufsetzer im Dreieck.',
+        material: 'Tchoukball- oder Handb\u00E4lle Gr. 1-2, H\u00FCtchen',
+        org: 'Dreiecke mit 1 L\u00E4ufer in der Mitte',
+        cues: 'Ball mit beiden H\u00E4nden sichern, Blick vor dem Pass zum Mitspieler, schnelle Freilaufbewegung.',
+        ref: 'Spiele/Burner Games_Ballspiele.pdf'
+      },
+      {
+        id: 'tb_m1_rebound_technik',
+        title: 'Tchoukball: Wurf auf den Rebound-Frame & Verbotene Zone',
+        category: 'ball',
+        subcat: 'tchoukball',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'Wurftechnik, Reflexion des Rebound-Winkels & Verteidigung im Halbkreis',
+        desc: '\u00DCbungen am Tchoukball-Frame (oder an Schr\u00E4g-K\u00E4sten): 1. Sch\u00FCler wirft aus dem Lauf mit Schlagwurf auf das elastische Netz, der Ball prallt zur\u00FCck. 2. Partner muss den abprallenden Ball fangen, bevor er den Hallenboden ber\u00FChrt. 3. Beachtung der \u201Everbotenen Zone\u201C (Halbkreis von 3m Radius vor dem Rahmen darf weder betreten noch ber\u00FChrt werden).',
+        material: '2 Tchoukball-Frames (oder Schr\u00E4gk\u00E4sten mit Trampolin), B\u00E4lle, Markierkreise',
+        org: '2 Stationen an den Hallenstirnseiten',
+        cues: 'Absprung vor der Kreislinie, flacher Einfallswinkel = flacher Ausfallswinkel, Rebound antizipieren.',
+        ref: 'Spiele/Regelerklaerung_Zuspiel.pdf'
+      },
+      {
+        id: 'tb_m2_tchoukball_match',
+        title: 'Tchoukball Spielform: 5v5 mit Spirit of Fair Play',
+        category: 'ball',
+        subcat: 'tchoukball',
+        phase: 'main2',
+        ageGroup: 'alle',
+        duration: 18,
+        goal: 'Taktische Raumdeckung, kontaktloses Spiel & Teamkommunikation',
+        desc: '5v5 auf zwei Rahmen an den Kopfseiten der Halle. Einzigartige Spielidee: Beide Teams d\u00FCrfen auf BEIDE Rahmen punkten! Ein Punkt z\u00E4hlt, wenn der Ball vom Rahmen abprallt und den Boden ber\u00FChrt. F\u00E4ngt die verteidigende Mannschaft den Ball direkt aus der Luft, geht das Spiel ohne Unterbrechung weiter. Kein K\u00F6rperkontakt, kein Blockieren des Gegners erlaubt!',
+        material: '2 Tchoukball-Frames, 1 Tchoukball Gr. 2, Parteib\u00E4nder',
+        org: 'Gesamte Halle, 2 Teams auf dem Feld, Wechslersystem',
+        cues: 'F\u00E4cherf\u00F6rmige Verteidigung um den Halbkreis, laute Absprache: \u201EMein Ball!\u201C, Respekt vor dem Gegner.',
+        ref: 'Spiele/Burner Games_Ballspiele.pdf'
+      },
+      {
+        id: 'tb_c_fairplay_kreis',
+        title: 'Fairplay-Reflexion & Schulter-Stretch nach Tchoukball',
+        category: 'ball',
+        subcat: 'tchoukball',
+        phase: 'cool',
+        ageGroup: 'alle',
+        duration: 5,
+        goal: 'Wertevermittlung (Spirit of Fair Play), Pulsberuhigung & Dehnung',
+        desc: 'Gemeinsamer Sitzkreis: Kurze Reflexion \u00FCber das kontaktlose Miteinander und die Gleichberechtigung aller Spieler. Anschlie\u00DFend Dehnen der Wurfschulter: Arm quer vor die Brust ziehen und mit der anderen Hand sanft halten (je 20 Sekunden).',
+        material: 'Kein Material erforderlich',
+        org: 'Sitzkreis an der Mittellinie',
+        cues: 'Ruhige Atmung, ehrliches Feedback zur Fairness der Teams.',
+        ref: 'Formales/allg. Regeln.doc'
+      },
+
+      // ==========================================
+      // --- NEU: PICKLEBALL & STREET RACKET ---
+      // ==========================================
+      {
+        id: 'pb_w_paddle_balance',
+        title: 'Pickleball-Warmup: Paddle-Balance & Tipp-Stafette',
+        category: 'ball',
+        subcat: 'pickleball',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Ballgef\u00FChl, Schl\u00E4gerkontrolle & Beinarbeit',
+        desc: 'Jeder Sch\u00FCler hat ein Pickleball-Paddle (oder Turnbrettchen) und einen gelochten Kunststoffball. \u00DCbungen im Gehen und Traben: Ball auf dem Paddle balancieren; Vorhand- und R\u00FCckhand-Tippen im Wechsel; Ball auf das Schl\u00E4gerblatt prellen und fangen; Paarweise Zup\u00E4sse im Vorw\u00E4rtslaufen \u00FCber Hallenlinien.',
+        material: 'Pickleball-Paddles (oder Tischtennisschl\u00E4ger/Brettchen), Lochb\u00E4lle',
+        org: 'Freie Hallennutzung im Trab',
+        cues: 'Weicher Handgelenkseinsatz, Schl\u00E4gerkopf leicht anwinkeln, st\u00E4ndig in Bewegung bleiben.',
+        ref: 'Rechnung Tischtennis - Mag. Florian Tintel.pdf'
+      },
+      {
+        id: 'pb_m1_dink_volley',
+        title: 'Pickleball: Kitchen-Zone, Dinking & Grundschl\u00E4ge',
+        category: 'ball',
+        subcat: 'pickleball',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'Kurzspiel an der Non-Volley-Zone (Kitchen) & Grundschl\u00E4ge von der Grundlinie',
+        desc: 'Am abgesenkten Badmintonnetz (ca. 86\u201391 cm): 1. Dinking-Drill: Sanfte, gef\u00FChlvolle Schl\u00E4ge knapp \u00FCber das Netz, die in der 2,13m langen \u201EKitchen-Zone\u201C aufkommen. Wichtigste Regel: In der Kitchen darf der Ball NICHT volley genommen werden! 2. Grundlinienduell mit Vorhand- und R\u00FCckhand-Drive.',
+        material: 'Badmintonnetze (abgesenkt), Paddles, Pickleballs, Bodenmarkierb\u00E4nder',
+        org: '2-4 Felder quer \u00FCber die Halle',
+        cues: 'Knie beugen beim Dinken, Ball kurz hinter dem Netz abtropfen lassen, Kitchen-Linie nicht \u00FCbertreten.',
+        ref: 'SportPlaner Racket Modul'
+      },
+      {
+        id: 'pb_m2_pickle_doppel',
+        title: 'Pickleball Doppelturnier: 2v2 mit 2-Bounce-Rule',
+        category: 'ball',
+        subcat: 'pickleball',
+        phase: 'main2',
+        ageGroup: 'alle',
+        duration: 18,
+        goal: 'Wettkampfspiel nach Originalregeln & taktische Doppel-Absprache',
+        desc: 'Doppelturnier auf 3\u20134 Querfeldern: Unterhand-Aufschlag diagonal in das Aufschlagfeld. Der Aufschlag muss einmal aufkommen, der R\u00FCckschlag ebenfalls (\u201ETwo-Bounce-Rule\u201C). Erst danach darf volley gespielt werden. Punkte z\u00E4hlt nur das aufschlagende Team. Kurze S\u00E4tze bis 7 Punkte, anschlie\u00DFender Rotationswechsel.',
+        material: 'Badmintonnetze, Paddles, B\u00E4lle, Z\u00E4hlkarten',
+        org: '4 Sch\u00FCler pro Netz (2v2)',
+        cues: 'Nach dem Return vor an die Kitchen aufr\u00FCcken, Partner absichern, laute Zurufe.',
+        ref: 'SportPlaner Racket Modul'
+      },
+      {
+        id: 'sr_m1_street_racket',
+        title: 'Street Racket: 3-Felder-Rhythmus auf Hallenboden',
+        category: 'ball',
+        subcat: 'pickleball',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'Einfaches, barrierefreies R\u00FCckschlagspiel ohne Netzaufbau',
+        desc: 'Drei aneinandergrenzende Quadrate (je 2x2m) werden mit Kreide oder Bodenlinien markiert. Das mittlere Quadrat ist die neutrale Zone. Zwei Spieler stehen in den Au\u00DFenfeldern und spielen einen Schaumstoff- oder Softball mit Paddles/H\u00E4nden hin und her. Der Ball muss im mittleren Quadrat einmal aufkommen und darf nicht geschmettert werden (F\u00F6rderung langer Ballwechsel).',
+        material: 'Paddles oder Holzbrettchen, Softb\u00E4lle, Bodenband / Kreide',
+        org: 'Mehrere 3er-Felder in der Halle verteilt',
+        cues: 'Den Ball dem Partner zuspielen, flie\u00DFende Ausholbewegung von unten nach oben.',
+        ref: 'SportPlaner Racket Modul'
+      },
+      {
+        id: 'pb_c_unterarm_dehnen',
+        title: 'Racket-Cool-Down: Handgelenks- & Unterarm-Entspannung',
+        category: 'ball',
+        subcat: 'pickleball',
+        phase: 'cool',
+        ageGroup: 'alle',
+        duration: 5,
+        goal: 'Lockerung der Schlaghand, Dehnung der Epicondylen (Tennisarm-Pr\u00E4vention)',
+        desc: 'Arme nach vorne strecken, Handfl\u00E4che nach oben drehen und die Finger mit der Gegenhand sanft zum K\u00F6rper ziehen (Beugeseite dehnen). Danach Handfl\u00E4che nach unten drehen und sanft nach unten beugen (Streckseite dehnen). Sanftes Schulterkreisen im Gehen.',
+        material: 'Kein Material erforderlich',
+        org: 'Gehen im Kreis',
+        cues: 'Sanfter Zug ohne Schmerz, Unterarmmuskulatur bewusst lockerlassen.',
+        ref: 'SportPlaner Racket Modul'
+      },
+
+      // ==========================================
+      // --- NEU: TOUCH-RUGBY & FLAG-FOOTBALL ---
+      // ==========================================
+      {
+        id: 'ru_w_ballpendel',
+        title: 'Touch-Rugby-Warmup: R\u00FCckpass-Pendel im 3er-Zug',
+        category: 'ball',
+        subcat: 'flagfootball',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Passrhythmus nach hinten/quer im Vorw\u00E4rtslauf & Ballhandling',
+        desc: '3er-Ketten laufen im gleichm\u00E4\u00DFigen Trab \u00FCber die Hallenl\u00E4nge. Der Ball wird beidh\u00E4ndig aus der H\u00FCfte NUR schr\u00E4g nach hinten oder parallel gepasst (kein Vorw\u00E4rtspass erlaubt!). Am Hallenende legt der Letzte den Ball kontrolliert ab (\u201ETry\u201C), alle drehen um und pendeln zur\u00FCck.',
+        material: 'Schaumstoff-Rugbyb\u00E4lle oder Softb\u00E4lle',
+        org: 'Reihenform in 3er-Wellen',
+        cues: 'Ball mit beiden H\u00E4nden greifen, Mitspieler l\u00E4uft leicht versetzt hinter dem Balltr\u00E4ger.',
+        ref: 'Spiele/"Touch"-Rugby - Ein faires und leicht zu erlernendes Sportspiel.pdf'
+      },
+      {
+        id: 'ru_m1_touch_regeln',
+        title: 'Touch-Rugby Taktik: Rollball & 5m-Verteidigungslinie',
+        category: 'ball',
+        subcat: 'flagfootball',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'Erlernen des fairen Touch-Stopps & schnelle Umschaltbewegung',
+        desc: '4v4 auf halbem Feld: Ber\u00FChrt ein Verteidiger den Balltr\u00E4ger mit beiden H\u00E4nden an H\u00FCfte/Trikot (\u201ETouch!\u201C), muss der Angreifer sofort stoppen und den Ball zwischen seinen Beinen durchrollen (\u201ERollball\u201C). Ein Mitspieler nimmt den Ball auf (\u201EDummy Half\u201C). Die Verteidiger m\u00FCssen nach jedem Touch 5 Meter zur\u00FCckweichen. Nach 4 Touches erfolgt Ballbesitzwechsel.',
+        material: 'Rugbyb\u00E4lle, H\u00FCtchen zur Feldabgrenzung',
+        org: 'Halbfelder in Hallenquerrichtung',
+        cues: 'Lauter Ruf \u201ETouch!\u201C, sofortiges R\u00FCckw\u00E4rtsweichen der Verteidiger, kein Festhalten/Schubsen.',
+        ref: 'Spiele/"Touch"-Rugby - Ein faires und leicht zu erlernendes Sportspiel.pdf'
+      },
+      {
+        id: 'ru_m2_touch_match',
+        title: 'Touch-Rugby Turnierspiel: 6v6 auf Weichboden-Endzone',
+        category: 'ball',
+        subcat: 'flagfootball',
+        phase: 'main2',
+        ageGroup: 'alle',
+        duration: 18,
+        goal: 'Dynamisches, kontaktloses Teamspiel mit hoher Laufintensit\u00E4t',
+        desc: 'Vollfeld-Match mit 6 Feldspielern pro Team. Ziel: Den Ball durch Passkombinationen nach hinten in die gegnerische Endzone (Weichbodenmatte) tragen und dort kontrolliert mit beiden H\u00E4nden ablegen (1 Punkt). F\u00E4llt der Ball nach vorne auf den Boden (\u201EKnock-on\u201C), wechselt der Ballbesitz sofort.',
+        material: '2 Weichbodenmatten, 1 Rugbyball, 2 Farben Parteib\u00E4nder',
+        org: 'Gesamte Halle mit fliegendem Spielerwechsel',
+        cues: 'Breite F\u00E4cherformation im Angriff, geschlossene Abwehrkette, diszipliniertes Zur\u00FCckweichen.',
+        ref: 'Spiele/"Touch"-Rugby - Ein faires und leicht zu erlernendes Sportspiel.pdf'
+      },
+
+      // ==========================================
+      // --- NEU: RINGTENNIS & TELLERWURFSPIELE ---
+      // ==========================================
+      {
+        id: 'rt_w_ring_haschen',
+        title: 'Ringtennis-Warmup: Moosgummiring-Staffel & Fangjagd',
+        category: 'ball',
+        subcat: 'ringtennis',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Greifschnelligkeit, Flugbahn-Antizipation & Reaktionsverm\u00F6gen',
+        desc: 'Paarweise gegen\u00FCberstehend (Abstand 6\u20138m): Zuwerfen von Moosgummiringen oder Ringen aus Gymnastikmaterial. Zun\u00E4chst beidh\u00E4ndiges, dann einh\u00E4ndiges Fangen vor der Brust und \u00FCber Kopf. Steigerung: Der Werfer ruft kurz vor dem Wurf \u201ERechts!\u201C oder \u201ELinks!\u201C \u2013 der Partner muss den Ring mit der entsprechenden Hand aus der Luft greifen.',
+        material: 'Moosgummiringe oder Gummiringe (Ringtennis)',
+        org: 'Paaraufstellung an Hallenl\u00E4ngsseiten',
+        cues: 'In die Flugbahn des Rings hineinbewegen, Hand greift den Ring im Flug fest zu, kein Weiterspringen.',
+        ref: 'Tellerwurfspiele/Gew\u00F6hnung an das Sportger\u00E4t Ringtennis.pdf'
+      },
+      {
+        id: 'rt_m1_ring_drallwurf',
+        title: 'Ringtennis Wurftechniken: Tellerwurf & Drallwurf',
+        category: 'ball',
+        subcat: 'ringtennis',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'Erlernen stabiler Ringrotationen & einh\u00E4ndiger Fangtechniken',
+        desc: 'Erarbeitung der Wurftechniken: 1. Grundwurf / Tellerwurf: Ring horizontal aus der H\u00FCfte mit schnellem Abklappen des Handgelenks abwerfen (stabile waagrechte Flugphase). 2. Drallwurf / Passierwurf: Ring vertikal mit R\u00FCckw\u00E4rtsdrall werfen, sodass er nach dem Aufkommen zur\u00FCckspringt. 3. Wichtigste Ringtennis-Regel: Der Ring darf beim Fangen nicht den K\u00F6rper ber\u00FChren und muss mit derselben Hand innerhalb von 2 Sekunden wieder abgeworfen werden.',
+        material: 'Moosgummiringe, H\u00FCtchenmarkierungen',
+        org: 'Gassenaufstellung zu zweit oder zu dritt',
+        cues: 'Handgelenk schnappt am Ende der Wurfbewegung nach vorne, weiches Abfedern beim Fangen.',
+        ref: 'Tellerwurfspiele/Einf\u00FChrung von Wurftechniken (Teller-, Passier- und Drallwurf).pdf'
+      },
+      {
+        id: 'rt_m2_ring_turnier',
+        title: 'Ringtennis Match: 1v1 & 2v2 \u00FCber das Volleyballnetz',
+        category: 'ball',
+        subcat: 'ringtennis',
+        phase: 'main2',
+        ageGroup: 'alle',
+        duration: 18,
+        goal: 'Wettkampf-Dynamik, Platzierung in freie Zonen & Fair Play',
+        desc: 'Spiele \u00FCber das Volleyball- oder Badmintonnetz (Netzh\u00F6he ca. 1,50\u20131,80m). Aufschlag von hinten diagonal \u00FCber das Netz. Der Ring muss immer aufw\u00E4rts fliegen (kein Schmettern nach unten). Punkte erzielt man, wenn der Ring im gegnerischen Feld auf den Boden f\u00E4llt oder der Gegner den Ring fallen l\u00E4sst bzw. mit zwei H\u00E4nden f\u00E4ngt. S\u00E4tze bis 11 Punkte.',
+        material: 'Volleyballnetze / Badmintonnetze, Moosgummiringe',
+        org: 'Mehrere Kleinfelder quer zum Hallennetz',
+        cues: 'Tief stehen, Ring mit lockerer Hand fangen und in einer flie\u00DFenden Bewegung zur\u00FCckwerfen.',
+        ref: 'Tellerwurfspiele/Einf\u00FChrung von Grundtechniken.pdf'
+      },
+      {
+        id: 'rt_c_schulter_auspendeln',
+        title: 'Schulter-Auspendeln & Atemkreisel nach Ringtennis',
+        category: 'ball',
+        subcat: 'ringtennis',
+        phase: 'cool',
+        ageGroup: 'alle',
+        duration: 5,
+        goal: 'Entlastung des Schultergelenks, Rumpfentspannung & Pulsnormalisierung',
+        desc: 'Leichte Gr\u00E4tschstellung, Oberk\u00F6rper nach vorne neigen: Beide Arme v\u00F6llig passiv wie zwei Pendel h\u00E4ngen lassen und kleine Kreise beschreiben (Pendel-Schwung). Anschlie\u00DFend tiefe Bauchatmung im aufrechten Stand.',
+        material: 'Kein Material erforderlich',
+        org: 'Kreisaufstellung',
+        cues: 'Vollst\u00E4ndige Muskelentspannung im Arm, Schwung kommt rein aus dem K\u00F6rper.',
+        ref: 'Tellerwurfspiele/Einf\u00FChrung.pdf'
+      },
+
+      // ==========================================
+      // --- NEU: HALLEN-BOULDERN & BERGSTEIGEN ---
+      // ==========================================
+      {
+        id: 'kl_w_greifstafette',
+        title: 'Kletter-Warmup: Affenhang & Sprossenwand-Stafette',
+        category: 'kampfklettern',
+        subcat: 'klettern',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Griffkraft, Schultermobilisation & K\u00F6rperspannung',
+        desc: 'Die Klasse verteilt sich an den Sprossenw\u00E4nden. 1. Affenhang: Freies H\u00E4ngen an der obersten Sprosse f\u00FCr 10\u201315 Sekunden mit aktiver Schulterblatt-Fixierung. 2. Sprossen-Klavier: Im H\u00E4ngen abwechselnd die Finger l\u00F6sen und wieder greifen. 3. Schnelle Stafette: Bis zur roten Markierung klettern, dort ein Parteiband abnehmen und kontrolliert abklettern.',
+        material: 'Sprossenw\u00E4nde, Turnmatten zur Sicherung, Parteib\u00E4nder',
+        org: 'Riegen an den Sprossenwand-Feldern',
+        cues: 'Immer kontrolliert abklettern, niemals aus mehr als Knieh\u00F6he abspringen, Schultern nicht aush\u00E4ngen.',
+        ref: 'Stationsbetrieb Klettern und Springen/Station 1_Gitterleiter.docx'
+      },
+      {
+        id: 'kl_m1_sprossen_traverse',
+        title: 'Hallenbouldern: Sprossenwand-Traverse ohne Bodenkontakt',
+        category: 'kampfklettern',
+        subcat: 'klettern',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'Laterale Klettertechnik, Dreipunktregel & Trittsicherheit',
+        desc: 'Aufgabe: Die gesamte Sprossenwandfront quer von links nach rechts durchklettern, ohne dass die F\u00FC\u00DFe den Boden ber\u00FChren. Regeln: Strikte Anwendung der Dreipunktregel (drei Gliedma\u00DFen haben immer festen Halt, bevor die vierte greift). Hindernisse \u00FCberwinden: Bestimmte Sprossen sind mit H\u00FCtchen blockiert und m\u00FCssen \u00FCberklettert oder unten durchklettert werden.',
+        material: 'Sprossenwandreihe, Niedersprungmatten \u00FCber die gesamte L\u00E4nge, Markierh\u00FCtchen',
+        org: 'Einzellauf mit 2m Sicherheitsabstand zwischen den Kletterern',
+        cues: 'K\u00F6rperschwerpunkt nah an die Sprossenwand bringen, auf den Zehenspitzen antreten, lange Arme.',
+        ref: 'Ger\u00E4teparcours zum Thema _Bergsteigen_.pdf'
+      },
+      {
+        id: 'kl_m2_bergsteigen_parcours',
+        title: 'Ger\u00E4teparcours \u201EBergsteigen\u201C: Taue, Kasten-Gipfel & Schlucht',
+        category: 'kampfklettern',
+        subcat: 'klettern',
+        phase: 'main2',
+        ageGroup: 'alle',
+        duration: 20,
+        goal: 'Mut, \u00DCberwindung von H\u00F6henhindernissen & sicheres Landen',
+        desc: 'Ein gro\u00DFer Abenteuerparcours nach Florians Original-Materialien: Station 1: Klettertau-Schluchtquerung auf eine Weichbodenmatte. Station 2: Gitterleiter-Gipfelkraxeln auf den gro\u00DFen Kasten. Station 3: Balancieren \u00FCber eine schr\u00E4g eingeh\u00E4ngte Langbank. Station 4: Kriechpassage unter Turnb\u00E4nken. Wer den Parcours fehlerfrei meistert, erreicht das \u201EGipfelbuch\u201C.',
+        material: 'Klettertaue, 2 gro\u00DFe K\u00E4sten, 2 Weichb\u00F6den, 3 Langb\u00E4nke, Turnmatten, Gitterleiter',
+        org: 'Gro\u00DFer Rundparcours mit Stationsbetreuern',
+        cues: 'Immer Helfer und Sichernde einteilen, keine Hektik an H\u00F6henstationen, weiches Abfedern.',
+        ref: 'Ger\u00E4teparcours zum Thema _Bergsteigen_.pdf'
+      },
+      {
+        id: 'kl_c_unterarm_faszien',
+        title: 'Kletter-Cool-Down: Unterarm- & Fingerstrecker-Entlastung',
+        category: 'kampfklettern',
+        subcat: 'klettern',
+        phase: 'cool',
+        ageGroup: 'alle',
+        duration: 5,
+        goal: 'Lockerung der Beugemuskulatur von H\u00E4nden und Unterarmen, Faszien-Relax',
+        desc: 'Im Fersensitz auf der Matte: H\u00E4nde mit nach hinten zeigenden Fingern auf die Matte st\u00FCtzen und den Oberk\u00F6rper leicht nach hinten lehnen (Dehnung der Handgelenksbeuger). Finger aussch\u00FCtteln (\u201EWassertropfen von den Fingern schleudern\u201C) und Atem\u00FCbungen im Kreis.',
+        material: 'Turnmatten',
+        org: 'Sitzkreis',
+        cues: 'Sehr sanft dehnen, Finger nicht \u00FCberstrecken, ruhige Ein- und Ausatmung.',
+        ref: 'Kraft und Beweglichkeit/Grundlagen koordinativer F\u00E4higkeiten.doc'
+      },
+
+      // ==========================================
+      // --- NEU: ERLEBNISPÃ„DAGOGIK & KOOPERATION ---
+      // ==========================================
+      {
+        id: 'kp_w_blind_navigieren',
+        title: 'Kooperations-Warmup: Blindenf\u00FChrung durch Hallenlabyrinth',
+        category: 'spiele',
+        subcat: 'teamspiel',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Vertrauensaufbau, akustische Orientierung & Verantwortung',
+        desc: 'Paare: Ein Sch\u00FCler schlie\u00DFt die Augen (\u201EBlind\u201C), der andere Sch\u00FCler (\u201ELotse\u201C) f\u00FChrt ihn durch Ber\u00FChrung an den Schultern oder ausschlie\u00DFlich durch leise akustische Kommandos (\u201EZwei Schritte vorw\u00E4rts, Stopp, rechts drehen\u201C) durch einen Hindernisparcours aus H\u00FCtchen und B\u00E4nken. Rollenwechsel nach 3 Minuten.',
+        material: 'Augenbinden oder geschlossene Augen, Markierungsh\u00FCtchen',
+        org: 'Paare im Hallenraum verteilt',
+        cues: 'Absolute Stille in der Halle, langsame und sichere Bewegungen, Vertrauen des Blinden respektieren.',
+        ref: 'Kooperation/Erlebnispaedagogik._Spiele.pdf'
+      },
+      {
+        id: 'kp_m1_saeureteich',
+        title: 'Team-Challenge: \u00DCberquerung des giftigen S\u00E4ureteichs',
+        category: 'spiele',
+        subcat: 'teamspiel',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 18,
+        goal: 'Probleml\u00F6sungskompetenz, Teamabsprache & kooperatives Handeln',
+        desc: 'Die Gruppe (6\u20138 Sch\u00FCler) muss eine 15 Meter breite Hallenzone (\u201Egiftiger S\u00E4ureteich\u201C) von Ufer A nach Ufer B \u00FCberqueren. Zur Verf\u00FCgung stehen lediglich 2 Turnb\u00E4nke und 2 Gymnastikmatten. Ber\u00FChrt ein Sch\u00FCler oder ein Ger\u00E4t den Hallenboden (\u201ES\u00E4ure\u201C), muss das gesamte Team wieder von vorne beginnen. Die Sch\u00FCler m\u00FCssen Strategien entwickeln, B\u00E4nke und Matten im Team nach vorne weiterzureichen.',
+        material: '4 Langb\u00E4nke, 4 Turnmatten, H\u00FCtchen zur Ufermarkierung',
+        org: '2-3 Teams im Parallelwettbewerb',
+        cues: 'Jeder Vorschlag im Team z\u00E4hlt, kein Sch\u00FCler darf zur\u00FCckgelassen werden, gegenseitiges Festhalten.',
+        ref: 'Kooperation/Die Team_Aufgabenstunde.pdf'
+      },
+      {
+        id: 'kp_m2_gordischer_knoten',
+        title: 'Teamaufgabe: Der Gordische Knoten & Pipeline-Transport',
+        category: 'spiele',
+        subcat: 'teamspiel',
+        phase: 'main2',
+        ageGroup: 'alle',
+        duration: 15,
+        goal: 'K\u00F6rperliche Flexibilit\u00E4t, Geduld & gemeinsame L\u00F6sungsfindung',
+        desc: 'Phase 1: Der Kreis streckt die H\u00E4nde in die Mitte und greift die H\u00E4nde zweier unterschiedlicher Mitsch\u00FCler. Aufgabe: Durch Dr\u00FCbersteigen, Drunterkriechen und Drehen den menschlichen Knoten entwirren, ohne die H\u00E4nde loszulassen, bis wieder ein sauberer Kreis entsteht. Phase 2: \u201EPipeline\u201C: Jedes Teammitglied h\u00E4lt ein halbiertes Rohr/Pappstreifen. Ein Tischtennisball muss \u00FCber 20 Meter transportiert werden, indem die Sch\u00FCler st\u00E4ndig nach vorne sprinten und die Pipeline verl\u00E4ngern.',
+        material: 'Papp-Halbrohre oder Zeitungsrollen, 2 Tischtennisb\u00E4lle',
+        org: 'Teams \u00E0 8-10 Sch\u00FCler',
+        cues: 'Vorsichtiges Miteinander, keine H\u00E4nde ruckartig verdrehen, Konzentration beim Balltransport.',
+        ref: 'Kooperation/kooperationsspiele.pdf'
+      },
+      {
+        id: 'kp_c_feedback_kreis',
+        title: 'Debriefing-Kreis & Stille-Reflexion nach Kooperationsstunde',
+        category: 'spiele',
+        subcat: 'teamspiel',
+        phase: 'cool',
+        ageGroup: 'alle',
+        duration: 5,
+        goal: 'Metakognitive Reflexion, Teamdynamik auswerten & Pulsberuhigung',
+        desc: 'Gemeinsamer Sitzkreis: Kurze Auswertung mit Daumenprobe (Wer hat sich geh\u00F6rt gef\u00FChlt? Wie lief die Entscheidungsfindung?). Danach 60 Sekunden absolute Stille mit geschlossenen Augen zur Entspannung und Sammlung vor dem Unterrichtsende.',
+        material: 'Kein Material erforderlich',
+        org: 'Sitzkreis an der Hallenmitte',
+        cues: 'Ehrliches, wertsch\u00E4tzendes Feedback, kein Auslachen bei Fehlern.',
+        ref: 'Kooperation/Stundenplanung_Kooperative_Spiele_.doc'
       }
-    ];
+      ,
+      {
+        id: 'rn_m1_spike_partner',
+        title: 'Spikeball: Partner-Zuspiel & Low Spike',
+        category: 'ball',
+        subcat: 'spikeball',
+        phase: 'main1',
+        ageGroup: 'alle',
+        duration: 12,
+        goal: 'Flugkurven-Kontrolle & diagonaler Schlagwinkel',
+        desc: 'Zu zweit an einem Netz: Ein Spieler wirft den Ball an, Partner spielt mit der offenen Handfl\u00E4che hoch an, Spieler 1 vollendet mit einem platzierten Low-Spike an den Netzrand. Fokus auf den 45\u00B0-Einfallswinkel.',
+        material: 'Spikeball-Sets, B\u00E4lle',
+        org: '2er-Teams an Stationen',
+        cues: 'Treffpunkt vor dem K\u00F6rper, Handfl\u00E4che steuert die Richtung.',
+        ref: 'SportPlaner Spikeball Modul'
+      },
+      {
+        id: 'fl_w_schlaepfer_hockey',
+        title: 'Floorball-Warmup: Schlapfen-Hockey & Pass-Labyrinth',
+        category: 'ball',
+        subcat: 'hockey',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 10,
+        goal: 'Stockkontrolle, tiefer Schwerpunkt & peripheres Sehen',
+        desc: 'Jeder Sch\u00FCler f\u00FChrt einen Lochball mit dem Unihockeyschl\u00E4ger im freien Hallenraum. Hindernisse (Turnschuhe/Schlapfen) liegen verteilt. Auf Pfiff: Ball um den n\u00E4chsten Schlapfen mit einer 360\u00B0-Drehung f\u00FChren, ohne den Schuh zu ber\u00FChren. Anschlie\u00DFend Doppelpass mit dem n\u00E4chsten Mitsch\u00FCler.',
+        material: 'Floorball-Schl\u00E4ger, Lochb\u00E4lle, Markierteller',
+        org: 'Freies Dribbeln im Hallenraum',
+        cues: 'Schl\u00E4gerblatt stets unter H\u00FCfth\u00F6he halten, Blick l\u00F6sen vom Ball.',
+        ref: 'Floorball/Spielregeln Floorball.pdf'
+      },
+      {
+        id: 'fb_w_chaos_dribbel',
+        title: 'Fu\u00DFball-Warmup: Chaos-Dribbeln & Schweifjagd',
+        category: 'ball',
+        subcat: 'fussball',
+        phase: 'warmup',
+        ageGroup: 'alle',
+        duration: 8,
+        goal: 'Enges Ballf\u00FChren mit beiden F\u00FC\u00DFen & visuelle Aufmerksamkeit',
+        desc: 'Alle Sch\u00FCler dribbeln mit einem Futsalball im begrenzten Hallendrittel. Jeder hat ein Parteiband hinten im Hosenbund stecken. Ziel: Den eigenen Ball eng mit Innen- und Au\u00DFenseite am Fu\u00DF behalten und gleichzeitig versuchen, anderen Sch\u00FClern das Parteiband zu stibitzen. Wer sein Band verliert, macht 3 Hampelm\u00E4nner und spielt weiter.',
+        material: 'Futsalb\u00E4lle, Parteib\u00E4nder',
+        org: 'Hallenmitteldrittel',
+        cues: 'Viele kleine Ballkontakte, beide F\u00FC\u00DFe nutzen, K\u00F6rper zwischen Ball und Gegner stellen.',
+        ref: 'Spiele/Diverse Spiele.pdf'
+      }
+
+];
 
     /* =====================================================================
        2. THEMEN-KATALOG
@@ -7917,7 +8599,7 @@
         { name: "Turn10 Barren: Stützschwung, Kehre \u0026 Wende", warmup: 'tur_w_barren_pendel', main1: 'tur_m1_barren_schwung', main2: 'tur_m2_barren_wende', cool: 'tur_c_barren_trizeps' },
         { name: "Turn10 Minitrampolin: Grundsprünge \u0026 Salto vorwärts", warmup: 'tur_w_minitramp_lauf', main1: 'tur_m1_minitramp_basis', main2: 'tur_m2_minitramp_salto', cool: 'tur_c_sprung_entlastung' },
         { name: "Turn10 Kasten: Aufhocken, Hocke \u0026 Kastengrätsche", warmup: 'tur_w_kasten_rhythmus', main1: 'tur_m1_kasten_hocke', main2: 'tur_m2_kasten_graetsche', cool: 'tur_c_kasten_dehnbank' },
-        { name: "Partner- \u0026 Trio-Akrobatik: Pyramidenbau \u0026 Vertrauen", warmup: 'tur_w_pyramiden_mobil', main1: 'tu_m1_partnerakrobatik', main2: 'tu_m1_parcours_bergsteigen', cool: 'tur_c_akrobatik_circle' }
+        { name: "Partner- \u0026 Trio-Akrobatik: Pyramidenbau \u0026 Vertrauen", warmup: 'tur_w_pyramiden_mobil', main1: 'tu_m1_partnerakrobatik', main2: 'tu_m1_pyramide_gruppe', cool: 'tur_c_akrobatik_circle' }
       ],
       kampfklettern: [
         { name: "Zweikampf: Sockenringen, Schildkröte \u0026 Sumo-Reifenduell", warmup: 'kmp_w_kampf_rituale', main1: 'kmp_m1_socken_schildkroete', main2: 'kmp_m2_sumo_turnier', cool: 'kmp_c_kampf_verbeugung' },
@@ -8928,6 +9610,112 @@
     }
 
     // --- TURNGEWAND- & ANWESENHEITS-TRACKER ENGINE ---
+        // --- WEBUNTIS KLASSENLISTEN & ROSTER VERWALTUNG ---
+    function getTurngewandRosters() {
+      try {
+        const raw = localStorage.getItem('sc_turngewand_rosters');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (typeof parsed === 'object' && parsed !== null) return parsed;
+        }
+      } catch (e) {
+        console.warn('Could not read Turngewand rosters', e);
+      }
+      return {
+        '3ce_3de': [
+          'Auer Felix', 'Berger Sophie', 'Brunner Lukas', 'Eder Maximilian', 'Fischer Emma',
+          'Gruber Jonas', 'Hofer David', 'Huber Leon', 'Leitner Mia', 'Mayer Sarah',
+          'Moser Tobias', 'M\u00FCller Paul', 'Pichler Anna', 'Reiter Elias', 'Schmidt Jakob'
+        ],
+        '4B': [
+          'Bauer Elias', 'Ebner Valentina', 'Fuchs Simon', 'Hahn Benjamin', 'Koller Marie',
+          'Lang Alexander', 'Maier Fabian', 'Novak Julian', 'Ortner Laura', 'Schwarz Noah'
+        ],
+        '1A': [
+          'Brandner Leo', 'Dengler Nina', 'Haas Mateo', 'Kaufmann Hanna', 'Lindner Theo',
+          'Paulitsch Luisa', 'Riegler Samuel', 'Steiner Clara', 'Weber Tim'
+        ],
+        '2C': [
+          'Baumann Anton', 'Fritsch Maya', 'Glaser Erik', 'Krenn Johanna', 'Maurer Niklas',
+          'Roth Valentina', 'Schuster Emil', 'Vogel Lara', 'Wieser Moritz'
+        ]
+      };
+    }
+
+    function saveTurngewandRosters(rosters) {
+      try {
+        localStorage.setItem('sc_turngewand_rosters', JSON.stringify(rosters));
+      } catch (e) {
+        console.warn('Could not save Turngewand rosters', e);
+      }
+    }
+
+    function openWebUntisModal() {
+      const modal = document.getElementById('webuntis-modal');
+      const targetName = document.getElementById('wu-target-class-name');
+      const textarea = document.getElementById('wu-import-textarea');
+      if (targetName) targetName.innerText = TG_CLASSES[CURRENT_TG_CLASS] || CURRENT_TG_CLASS;
+      const rosters = getTurngewandRosters();
+      const currentList = rosters[CURRENT_TG_CLASS] || [];
+      if (textarea) textarea.value = currentList.join('\n');
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeWebUntisModal() {
+      const modal = document.getElementById('webuntis-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function saveWebUntisRoster() {
+      const textarea = document.getElementById('wu-import-textarea');
+      if (!textarea) return;
+      const text = textarea.value;
+      const lines = text.split('\n');
+      const cleaned = [];
+      const seen = new Set();
+
+      lines.forEach(rawLine => {
+        let line = rawLine.trim();
+        if (!line) return;
+        // Clean leading numbers like "1. ", "1) ", tabs
+        line = line.replace(/^[0-9]+[\.\)\-\:\s]+/g, '').trim();
+        // Skip header lines
+        if (/^(sch\u00FCler|name|vorname|nachname|nr|klasse)/i.test(line)) return;
+        if (line.length > 1 && !seen.has(line.toLowerCase())) {
+          seen.add(line.toLowerCase());
+          cleaned.push(line);
+        }
+      });
+
+      cleaned.sort((a, b) => a.localeCompare(b, 'de'));
+
+      const rosters = getTurngewandRosters();
+      rosters[CURRENT_TG_CLASS] = cleaned;
+      saveTurngewandRosters(rosters);
+      closeWebUntisModal();
+      renderTurngewandView();
+      showToast(`Klassenliste f\u00FCr ${TG_CLASSES[CURRENT_TG_CLASS] || CURRENT_TG_CLASS} mit ${cleaned.length} Sch\u00FClern gespeichert!`);
+    }
+
+    function clearCurrentClassRoster() {
+      if (!confirm(`M\u00F6chtest du die Klassenliste f\u00FCr "${TG_CLASSES[CURRENT_TG_CLASS] || CURRENT_TG_CLASS}" wirklich leeren?`)) return;
+      const rosters = getTurngewandRosters();
+      rosters[CURRENT_TG_CLASS] = [];
+      saveTurngewandRosters(rosters);
+      closeWebUntisModal();
+      renderTurngewandView();
+      showToast('Klassenliste zur\u00FCckgesetzt');
+    }
+
+    function selectRosterStudent(name) {
+      const input = document.getElementById('tg-input-name');
+      if (input) {
+        input.value = name;
+        input.focus();
+        showToast(`${name} ausgew\u00E4hlt`);
+      }
+    }
+
     let CURRENT_TG_CLASS = '3ce_3de';
     const TG_CLASSES = {
       '3ce_3de': '3ce / 3de',
@@ -9067,14 +9855,64 @@
         if (!studentMap[key]) studentMap[key] = [];
         studentMap[key].push(entry);
       });
-
-      // Datalist Autovervollstaendigung pflegen
+      // Datalist & WebUntis Klassenliste pflegen
+      const rosters = getTurngewandRosters();
+      const classRoster = rosters[CURRENT_TG_CLASS] || [];
+      const allStudentNames = Array.from(new Set([...classRoster, ...Object.keys(studentMap)])).sort((a, b) => a.localeCompare(b, 'de'));
+      
       const datalist = document.getElementById('tg-student-suggestions');
       if (datalist) {
-        datalist.innerHTML = Object.keys(studentMap).map(n => `<option value="${n}">`).join('');
+        datalist.innerHTML = allStudentNames.map(n => `<option value="${n}">`).join('');
       }
 
-      // Statistiken berechnen
+      // Roster Schnellauswahl rendern
+      const rosterContainer = document.getElementById('tg-roster-container');
+      const rosterTitle = document.getElementById('tg-roster-title');
+      if (rosterTitle) rosterTitle.innerText = `Klassenliste (${classRoster.length} Sch\u00FCler)`;
+
+      if (rosterContainer) {
+        if (classRoster.length === 0) {
+          rosterContainer.innerHTML = `
+            <div style="padding: 0.85rem; text-align: center; color: #64748b; font-size: 0.8rem;">
+              Noch keine Sch\u00FClernamen f\u00FCr diese Klasse hinterlegt.<br>
+              <button class="btn btn-outline btn-sm" onclick="openWebUntisModal()" style="margin-top: 6px; font-size: 0.75rem;">
+                \uD83D\uDCCB Jetzt WebUntis-Liste einf\u00FCgen
+              </button>
+            </div>
+          `;
+        } else {
+          let rHtml = `<div style="display: grid; grid-template-columns: 1fr; gap: 6px; max-height: 250px; overflow-y: auto; padding: 2px;">`;
+          classRoster.forEach(student => {
+            const infCount = studentMap[student] ? studentMap[student].length : 0;
+            let badgeStyle = 'background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1;';
+            let badgeText = '0';
+            if (infCount === 1) {
+              badgeStyle = 'background: #fef3c7; color: #b45309; border: 1px solid #f59e0b; font-weight: 700;';
+              badgeText = '1x';
+            } else if (infCount === 2) {
+              badgeStyle = 'background: #fee2e2; color: #b91c1c; border: 1px solid #ef4444; font-weight: 700;';
+              badgeText = '2x';
+            } else if (infCount >= 3) {
+              badgeStyle = 'background: #881337; color: #ffffff; border: 1px solid #4c0519; font-weight: 700;';
+              badgeText = `${infCount}x !`;
+            }
+
+            const safeName = student.replace(/'/g, "\\'");
+            rHtml += `
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 8px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.8rem;">
+                <span style="font-weight: 500; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px;" title="${student}">${student}</span>
+                <div style="display: flex; align-items: center; gap: 4px;">
+                  <span style="padding: 1px 5px; border-radius: 10px; font-size: 0.7rem; ${badgeStyle}" title="${infCount} Vermerke">${badgeText}</span>
+                  <button class="btn btn-outline btn-sm" onclick="selectRosterStudent('${safeName}')" style="padding: 2px 6px; font-size: 0.72rem;" title="Namen ins Formular \u00FCbernehmen">\u270E</button>
+                  <button class="btn btn-danger btn-sm" onclick="quickBumpTurngewand('${safeName}')" style="padding: 2px 7px; font-size: 0.72rem; font-weight: 700;" title="+1 Vermerk heute eintragen">+1</button>
+                </div>
+              </div>
+            `;
+          });
+          rHtml += `</div>`;
+          rosterContainer.innerHTML = rHtml;
+        }
+      }// Statistiken berechnen
       let count1 = 0;
       let count2 = 0;
       let count3plus = 0;
@@ -9149,6 +9987,47 @@
       });
 
       container.innerHTML = html;
+    }
+
+    function exportTurngewandCsv() {
+      const allData = getTurngewandAllData();
+      const rosters = getTurngewandRosters();
+      let csv = "\uFEFFKlasse;Sch\u00FCler;Datum;Grund;Notiz\r\n";
+      let total = 0;
+      Object.keys(TG_CLASSES).forEach(cls => {
+        const list = allData[cls] || [];
+        list.forEach(e => {
+          total++;
+          const noteSafe = (e.note || '').replace(/"/g, '""');
+          csv += `"${TG_CLASSES[cls] || cls}";"${e.name}";"${e.date}";"${e.reason}";"${noteSafe}"\r\n`;
+        });
+      });
+
+      if (total === 0) {
+        let hasAnyRoster = false;
+        csv = "\uFEFFKlasse;Sch\u00FCler;Status\r\n";
+        Object.keys(TG_CLASSES).forEach(cls => {
+          const r = rosters[cls] || [];
+          if (r.length > 0) hasAnyRoster = true;
+          r.forEach(st => {
+            csv += `"${TG_CLASSES[cls] || cls}";"${st}";"Keine Vermerke (0)"\r\n`;
+          });
+        });
+        if (!hasAnyRoster) {
+          showToast('Keine Daten zum Exportieren vorhanden');
+          return;
+        }
+      }
+
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute('download', `Turngewand_SacreCoeur_${todayStr}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      showToast('\u2713 Turngewand-Liste als Excel/CSV exportiert!');
     }
 
     function copyTurngewandList() {
@@ -9297,6 +10176,12 @@
     // --- APP INITIALISIERUNG ---
     function initSportPlaner() {
       // 1. Service Worker fuer Offline-Support registrieren
+      // Storage Persistence API (Verhindert Loeschung durch Android bei Speichermangel)
+      if (navigator.storage && navigator.storage.persist) {
+        navigator.storage.persist().then((persistent) => {
+          console.log('SportPlaner storage persistence guaranteed:', persistent);
+        });
+      }
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('./sw.js').then((reg) => {
@@ -9377,5 +10262,29 @@
     window.addEventListener('load', removeBrandingBars);
     setInterval(removeBrandingBars, 250);
   </script>
+  <!-- Modal: WebUntis Namenslisten-Import -->
+  <div id="webuntis-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 500px; width: 94%; padding: 1.25rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+        <h3 style="margin: 0; font-size: 1.15rem; color: #002B49; display: flex; align-items: center; gap: 8px;">
+          <svg style="width: 22px; height: 22px; color: #0284c7;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          <span>WebUntis-Klassenliste importieren</span>
+        </h3>
+        <button class="btn btn-outline btn-sm" onclick="closeWebUntisModal()" style="border:none; font-size: 1.3rem; padding: 2px 8px; cursor: pointer;">&times;</button>
+      </div>
+      <div style="font-size: 0.85rem; color: #475569; margin-bottom: 0.75rem; line-height: 1.4;">
+        Aktive Klasse: <strong id="wu-target-class-name" style="color: #0284c7;">3ce / 3de</strong><br>
+        Kopiere die Sch&uuml;lernamen einfach aus WebUntis oder Excel und f&uuml;ge sie hier ein (Nummern und Tabulatoren werden automatisch bereinigt):
+      </div>
+      <textarea id="wu-import-textarea" class="form-control" rows="8" placeholder="Beispiel:&#10;1. Auer Felix&#10;2. Berger Sophie&#10;3. Gruber Lukas&#10;...oder einfach aus WebUntis kopiert" style="font-family: monospace; font-size: 0.85rem; width: 100%;"></textarea>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; flex-wrap: wrap; gap: 8px;">
+        <button class="btn btn-outline btn-sm" onclick="clearCurrentClassRoster()" style="color: #dc2626;">Liste leeren</button>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-outline btn-sm" onclick="closeWebUntisModal()">Abbrechen</button>
+          <button class="btn btn-primary btn-sm" onclick="saveWebUntisRoster()">Klassenliste speichern</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

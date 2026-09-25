@@ -1689,22 +1689,6 @@
           <div class="sp-meta-item"><strong>Turnsaal / Raum:</strong> <span id="lbl-halle" contenteditable="true" class="editable">Ganzer Turnsaal</span></div>
           <div class="sp-meta-item" style="grid-column: span 2;"><strong>Thema der Einheit:</strong> <span id="lbl-thema" contenteditable="true" class="editable" style="font-weight: 700; color: var(--dark);">Leichtathletik-Dreikampf: Laufen, Springen &amp; Werfen</span></div>
           <div class="sp-meta-item" style="grid-column: span 2;"><strong>P&auml;dagogisch-motorische Zielsetzung:</strong> <span id="lbl-ziel" contenteditable="true" class="editable">Verbesserung der Fu&szlig;gelenksarbeit, Absprungdynamik und Schnelligkeitsausdauer</span></div>
-          <!-- Turngewand & Anwesenheits-Vermerk Block -->
-          <div class="sp-meta-item" style="grid-column: span 4; background: #fff1f2; border: 1px solid #fecdd3; padding: 8px 12px; border-radius: 6px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-              <strong style="color: #9f1239; display: flex; align-items: center; gap: 6px;">
-                <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
-                Turngewand nicht dabei / Abwesenheit (<span id="lbl-turngewand-klasse">3ce / 3de</span>):
-              </strong>
-              <div class="no-print" style="display: flex; gap: 4px;">
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('3ce / 3de')">3ce/3de</button>
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('4B')">4B</button>
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('1A')">1A</button>
-                <button type="button" class="chip" style="font-size: 0.72rem; padding: 2px 7px;" onclick="setLessonTurngewandClass('2C')">2C</button>
-              </div>
-            </div>
-            <div id="lbl-turngewand-notiz" contenteditable="true" class="editable" style="min-height: 22px; font-size: 0.86rem; color: #881337;" placeholder="Namen der Sch&uuml;ler ohne Turngewand hier notieren (z. B. Max M., Sophie K.). Wird automatisch gespeichert und gedruckt.">Keine Vermerke</div>
-          </div>
         </div>
 
         <!-- Timeline Bar (Visualisierung der Stundenteilung) -->
@@ -2423,6 +2407,11 @@
               <span>Liste kopieren (WebUntis)</span>
             </button>
           </div>
+            <button class="btn btn-outline btn-sm" onclick="exportTurngewandCsv()" title="Als Excel / CSV Tabelle exportieren">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Excel / CSV</span>
+            </button>
+            <span class="save-pill saved no-print" style="font-size: 0.72rem; padding: 4px 8px;">&#10003; Permanent gespeichert</span>
         </div>
 
         <!-- Klassen-Umschalter -->
@@ -9151,6 +9140,31 @@
       container.innerHTML = html;
     }
 
+    function exportTurngewandCsv() {
+      const allData = getTurngewandAllData();
+      let csv = "\uFEFFKlasse;Sch\u00FCler;Datum;Grund;Notiz\r\n";
+      let total = 0;
+      Object.keys(TG_CLASSES).forEach(cls => {
+        const list = allData[cls] || [];
+        list.forEach(e => {
+          total++;
+          csv += "";"";"";"";""\r\n;
+        });
+      });
+      if (total === 0) {
+        showToast('Keine Vermerke zum Exportieren vorhanden');
+        return;
+      }
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute('download', Turngewand_SacreCoeur_.csv);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      showToast('\u2713 Turngewand-Liste als Excel/CSV exportiert!');
+    }
+
     function copyTurngewandList() {
       const allData = getTurngewandAllData();
       const list = allData[CURRENT_TG_CLASS] || [];
@@ -9297,6 +9311,12 @@
     // --- APP INITIALISIERUNG ---
     function initSportPlaner() {
       // 1. Service Worker fuer Offline-Support registrieren
+      // Storage Persistence API (Verhindert Loeschung durch Android bei Speichermangel)
+      if (navigator.storage && navigator.storage.persist) {
+        navigator.storage.persist().then((persistent) => {
+          console.log('SportPlaner storage persistence guaranteed:', persistent);
+        });
+      }
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('./sw.js').then((reg) => {
