@@ -42,7 +42,10 @@ Du betrittst den Turnsaal und brauchst in 10 Sekunden eine zündende Idee?
 - **🎲 Spontan-Würfel („Überrasch mich“):** Wählt mit einem Klick ein passendes Spiel aus der Datenbank.
 
 ### 2. 📚 Umfassende Übungs- & Spieledatenbank
-- Über **450 praxiserprobte Einheiten** für Unterstufe und Oberstufe (AHS-Lehrplan Österreich).
+- Über **500 praxiserprobte Einheiten** für Unterstufe und Oberstufe (AHS-Lehrplan Österreich).
+- **📋 Kompakt-Tabelle (Auf einen Blick):** Blitzschnelles Umschalten zwischen visuellen Detail-Karten und einer hochkompakten Turnsaal-Tabelle (Spiel, Material, Dauer, 1-Satz-Ablauf).
+- **⭐ 50+ Neue 1. Klasse Gym Spiele:** Speziell für 10- bis 11-jährige Anfänger (koedukativ, fangen, werfen, koordination, null frustration).
+- **📱 50+ Instagram & TikTok Viral-Hits:** Moderne Trend-Spiele von @wimasu, @vlamingo, @thepespecialist, @just.playsports.
 - Volltextsuche, Filter nach Materialaufwand, Stundenphase (Warm-Up, Hauptteil 1/2, Cool-Down) und Sportart.
 - 1-Klick-Übernahme direkt in das aktive Stundenbild.
 
