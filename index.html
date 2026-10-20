@@ -73,16 +73,16 @@
       top: 0;
       z-index: 100;
     }
-    .bärand { display: flex; align-items: center; gap: 12px; }
-    .bärand-icon {
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-icon {
       background: linear-gradient(135deg, var(--primary) 0%, #38bdf8 100%);
       width: 40px; height: 40px; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
       font-size: 15px; font-weight: 800; letter-spacing: -0.5px; color: white;
       box-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
-    .bärand-text h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.3px; color: #ffffff; }
-    .bärand-text p { font-size: 0.76rem; color: #94a3b8; }
+    .brand-text h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.3px; color: #ffffff; }
+    .brand-text p { font-size: 0.76rem; color: #94a3b8; }
     
     .nav-tabs {
       display: flex;
@@ -455,6 +455,52 @@
       background: #f0f9ff !important;
     }
 
+    
+    /* Sleek Translucent Header Refresh Button */
+    .btn-header-refresh {
+      background: rgba(255, 255, 255, 0.15) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      border-radius: 8px !important;
+      padding: 6px 12px !important;
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      white-space: nowrap !important;
+    }
+    .btn-header-refresh:hover {
+      background: rgba(255, 255, 255, 0.25) !important;
+      border-color: rgba(255, 255, 255, 0.45) !important;
+    }
+    .btn-header-refresh svg {
+      width: 14px !important;
+      height: 14px !important;
+      stroke: #ffffff !important;
+      fill: none !important;
+      stroke-width: 2 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+    }
+    @media (max-width: 900px) {
+      .btn-desktop-only,
+      .header-actions #btn-pwa-install,
+      .header-actions button[onclick*="loadPreset"],
+      .header-actions button[onclick*="printLesson"],
+      .header-actions button[onclick*="openSavedLessonsModal"] {
+        display: none !important;
+      }
+      .header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+      }
+    }
+
     /* Database Layout */
     .db-layout { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; }
     .db-filter-card {
@@ -722,7 +768,7 @@
     }
 
     /* Bärand Logo Card */
-    .bärand-logo-card {
+    .brand-logo-card {
       background: #ffffff;
       padding: 3px 8px;
       border-radius: 8px;
@@ -733,7 +779,7 @@
       height: 40px;
       flex-shrink: 0;
     }
-    .bärand-logo-img {
+    .brand-logo-img {
       height: 30px;
       width: auto;
       max-width: 90px;
@@ -782,27 +828,27 @@
         top: 0 !important;
         z-index: 100 !important;
       }
-      .bärand {
+      .brand {
         display: flex !important;
         align-items: center !important;
         gap: 8px !important;
         min-width: 0 !important;
         flex-shrink: 1 !important;
       }
-      .bärand-logo-card {
+      .brand-logo-card {
         height: 32px !important;
         padding: 2px 6px !important;
         flex-shrink: 0 !important;
       }
-      .bärand-logo-img {
+      .brand-logo-img {
         height: 24px !important;
         max-width: 65px !important;
       }
-      .bärand-text {
+      .brand-text {
         min-width: 0 !important;
         overflow: hidden !important;
       }
-      .bärand-text h1 {
+      .brand-text h1 {
         font-size: 1.05rem !important;
         line-height: 1.2 !important;
         white-space: nowrap !important;
@@ -810,7 +856,7 @@
         text-overflow: ellipsis !important;
         margin: 0 !important;
       }
-      .bärand-text p {
+      .brand-text p {
         display: none !important; /* Untertitel am Handy ausblenden fuer maximale Bäreite */
       }
       .nav-tabs {
@@ -1211,7 +1257,7 @@
     }
 
     @media (max-width: 480px) {
-      .bärand-text p {
+      .brand-text p {
         max-width: 140px;
       }
       .timeline-label {
@@ -1442,11 +1488,11 @@
 
   <!-- Top Navigation Header -->
   <header>
-        <div class="bärand">
-      <div class="bärand-logo-card">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAAB3CAIAAACId7L/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAydpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAxIDc5LjE0NjI4OTk3NzcsIDIwMjMvMDYvMjUtMjM6NTc6MTQgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyNS4wIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5OUQwMUFCQjZGMkExMUVFQTAwMkI5QjAzOEU4M0JDNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5OUQwMUFCQzZGMkExMUVFQTAwMkI5QjAzOEU4M0JDNSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk5RDAxQUI5NkYyQTExRUVBMDAyQjlCMDM4RTgzQkM1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk5RDAxQUJBNkYyQTExRUVBMDAyQjlCMDM4RTgzQkM1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+q7EsFgAAIjlJREFUeNrsXQdYE0kb3oTQe0ekKqCAoiIWVOxnF8V+4imigp7YEHtBEb0TsPd+FizobwcRFTkbKIhnQ1BPERRBEOkkhGT/gcVlsrsJCUXlnPcJeZZkMzM7871fmcrCcRxDQPjpwf5BypGbW1xeLkTtgfDzMkEgxEOPxfZ0Wu7ssPhEaByXW45aBeHbg/V9vaPMrMJ50w88+ect6+snmlqqfstHDRjsoKzEQc2D8N9ngkCAnzx+f/2qU0JhlVNElINVeaGiorh41Zhhbo4cDhs1EsJ/lgnZOcV+Mw8lPHhFiD5BA9bXd6zaPqitWu/eq09LjhziA8J/iwlCIR5+6fGKBUfL+eW4GBärABQKfNGveZHXIhLZtTFgs1F4I/wkmZGYVLfE9Gn8vmfyE0RRgop8Q1x2dbVeuG2NhoYPaDKERMwFEBf87HR+47AQRFYgjAJ0GlA8nePbx8R2gpqqAWg6h8TEh53PJ/JmHHt5/SZd1itDTGUJnhaqa8rpNk0DwwEbeEkL9ocEjURAYnD8T//ZVJkaLATCalLOgdxwiA4ziotLZU3d7e+wDBEPth9D4vKPk5Kyzp2L/d+I2v1zAYrIGmERDQQeHI7cs8Fe3ke1RTytCI4uYAUpK+Nejnm3683x2Vh7FC8LEOEXimEDAwbH59v3TdLSVUVsiNCYmkCbi6dMPe7ZG3r75VIKg40weFB2qqspB26d072GNAgeERsYEEunv804evRt68EZ5uQCTrjsVE3PDqPEuS/3dFBTkUKMiND4mEPiSxz168O/9OyIZ+1hxKcwCAbvW5vtDZ2qoK6J2RWiUTCBQUMg7FXpvx8bLxPAzRutEYqQHSRsCRkbah07NMTPTRk2L0FiZQCAvj/vXgb8P7owkZ+Yxhg2MY3PEvxyO3P7js506WKDWRWjETCD9pZ2bär548cpNevBqdJeKGP7Z4DnVtgxoYoXEzgcCbt7n+C0MfJbzGad6RNNyYtXC41/ReqEMJodEzoULKcTwu9s3iOX/l5BRgkHdEpwEjH6b6DJrj2x+RAaGxMgGUilcmUFKsWrbG5ZUfPXRnW/AFgVDIEg0SJJsLgGk+A2b7DkRkQJCMH3GeApDp9YGXPrzPJz8BlJg2vWf43/42LU0wMbOV4KiauCBe+7ZH7tlxHbU0QuNjwsnQuGMHb7BoatzURCvs4vz5y0ayWGwKDSh9qcTnrK/fbttwac/OaNTYCI2JCbdiUtYuP4GL6PdqyMuzJ0/tHnHL3661OUtU7vGvos/o7QHP6ujhu6i9ERoHE5KTM2d67v7q8Yt17YFxOH527u++rpgYuWf8fP2qsGtXn6EmR/jRmfAxs2D8sBAcr4qJlZUl7fLC4bB/n9Xn+IWF6urUWags2toG0oPynbH/RdJH1OoIPy4Tcr+Ujh60vqyMT0pzaQm/xl85ODS9csu/dbtmmOjUDBZTMM2q7JJyH7EhO6cINTzCD8qEqxHP8r4UYV87fAB40m2Gp62lfOTULA+vfhiNAzjNOID3Mh5/wohNZXwBanuEH5EJKsrypAQT0qyqLu2yfRBG+y0ZHLJjqpT3f0jPWb30NGp7BBGn+vuOrH3MLJw340BJMS8vtyj3cwH8lbGJvhJEjyqhV5DftNsTRMyMqT1KTJs8djO81EHC7IyNu6b1G9AKSQDC92dCUlLmpNEbAQ2AYIqbMQFPptDUVAm7vMhEDA0IvHn7efyw4KLCUkxMOtXWkM2+HhtgYKCOhADhe3pHjx6l/+q6vrSEx2IxbH1Hh66e5rmoZZJpANDMUvdS9Ao9fU2SADht4RvxLhAKfabtR8dHIHxPJlyLSpo0aqNAIMRFOUCRVxK2rcwvXl9qaKAmTeL6eqpnriw2NNKCow5MNAviPelJ6rWrz5EQIHwH70iI4/t2x2wLOk+ZPycBLr1ab949WVHGBcpf8krd+v+Z8ylPnHdEfKispHg7ca3y14AEATHhGyE29u3tmKQKjwjky6piAY7hSY/T4uNSMIgb3Xo76OlrWFjqe0ztXru9svPzucP6rcv5lE8POWD6eXj94rdkCBIFxIQfwlE+E5a4atFhWFtH3V3T1FijjslmZRX2d1nF55dj4o0Pi8W+FhtgZIhCZxQn1Dd4vPKyMgGPJxAIpKUZny+oMWiuBQwN1Q+cmCMu/PjqsAmD15xHovCTo35OcBIK8ffv8x7c/zfuVkpiwqvsrHxh5fQhDofTzLpJm3aW3XrZOTpZamsp1WChvvowg4d3bNKkfpR0+/Zmy9f+GrjshIR7roYn+C5xbdpUEwkE8o5qCaD7o2+82B5yKfVNJj02ha+BEzLErZPv4qH6+qr0dE6Exq9dfoy47tTNdu9hbzl2vS0zA4/o63M4KiJRwmDFuN96rghwQwKBvCOZATyfqMhnvTqt8Pt9H0kDTHQqqMhqMlx48WxsX+flZ888FAoZ6Ed0/Fu1MN65f1o90qCShNj6TROMjXXE7dQNLs4cv1UixZw/BMQEERX74EFqf5cA3xn78vOKMYleOEXyBALhygVH5sz4CxgT+rcGhlrHzsxVVKz/HR0VFOT2H/eRcORCuUB46+9kJBCICdKioJC3xO+E59hNmR9z6QSQQAb4q5tR/0ydsIsvehS5qqrS6csL1NQaai9Hc3PdGXMHY0wnMxAXuzZdQSPOKE6QCskpWZ5jtxTkV9sBHT3N/kMcjZroFBaURIUnpqVmMW67wjiwNWx0l7VBY4nrsBMPnbs1MzVt2F0c+Xxhz47LgR2j7IhBFu967BojIw0kFogJkhB9I3mu1x5hpY8P5GaAa8cpM/q2sDFgf/XpQUrvP+RtDQmPuPBAyo3gdx+Z2c3FhpBReflvMfUj9t6/09y30uNm4n3x6rETJnZBYoGYIBZhJx4ELA0lxKWFrWnIjsmWlrribär5z+5WPJ3B+BJjEnYgAlJQUYxICv+UJguBxJ47Z9ijhNcZkr0zNDSNuLkWbI6E4gRlH/roLaEBcj3LvfuL8PAk0AOjmYv2/q0vl5eVZohaAHjBwubwtwRHflPosbJH/SEqkTiL9XVZ+AReJBWICA65FPV+/Ooy4nuk71H/NSGlO62jeTO/I6bmMBIC7WYFNsHcw/8bPbG/fxMzSUFxAn/wCLflHTKAhJSXTd/o+4nq0u8sMn77Sew4ObUyWBoylSxvpjQwZ0fl6XMDwEe2+tUfIYs1bPIxuoIgBjfuxr5BYICaIoKiozGPMFmFlIGFopL3Uf4SsDvQ4d2crG2PSFJAxg4am6r7jc/7c8KuWptJ3eewu3WyIjfToqxfibä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ä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ärznzBxwKm0vSAPhFc7wPwDTQ0lZbE/QrogFCLZkAYGiovu3AdNgmUC4W+Bx4+TKrxnRA+AsY5TOvv1wDuOkgZnCCxgeAX/Tk0RuykHJycqHn58u6yBMBMYGKHj1b+C2rGGuDVzmzoMD0V9eQGifnfczIHz6mi2LDD+u+f/9l5YJj8PYwW/d7m5vpoMZGqCsTKryaKd1HjOtWHV5AZoFVcYpz2ahB6wsKuBJSyMz4YmNr3NDPU1rKHz9sA7H1L4Hf5w4BTEYtjVA/TAAe9srAkR06t8BEOUAS40tu4dihIQWFPHEpNLc2IPa3aziA4H/B7KOfcwvJiVJdutv9PrsvamaEemMCAEeOveeIt1NnG4y2QS+B9LTscUND8vKZLYOZmY6jk0WDPszpk/eJHTGI4llaNdm6dwo6IAdBKl2Py7g8uVwgnDv90M3rT8QcZoM1NdE9ecFPR+dbd9s/e/phnGsQaaxMzPTPXlmooqKA2hihQZiAVZxGI1ww+8iNyEeY6PE2JDd0dNWPnfczM9H6Zo+R9alwoMvqsrKqmReqasqRt/xrccwzAvKOZICCPHvDtonuk/uI27f08+dCt75rHz9+/22eAUTqYwatJ2mgpKRwOnwRogFCg9sEEjeuJc313ofjQrqPxKpchbxinfvosR0a1FEvLeWPHBiU9u4TkamGluq5yCWGhuhocYRvyASAf//NmTJ+W86nPEzURyL99SFunf3XjW6gUa3CIt7E0VtfJlcZH21t9fNRS/T00LniCN+cCVjlseFLfI/djBK7kE1XT2Pn4Zn2dkb1W/SiorJRg4PS07IJ7gFrcDZyiRGyBgjfiwlY5Ur802HxgUtP4JXb2dG9IeApzV4wbNKU7vW1dDjnc/GEEZvep2UTpTduqht6ztdAXw21KML3ZAKBDx/yF8z66/GjNyxazEBAR0d9VdCEnr1a1HGFwJOnGdN/21aQX7U6wrGjza6D02Q9MxMBoaGYgFXO4r588R//Rcf4/HJxAw52rcyXrx3r0Nq4FmNeoLRnTj8MWBxKGp+Bärh3WhoxXkGejtkT4gZhA4HNuyZbgiHOn7tATJ02EvYPl7AVDO3S0kN5fys4uXrPidPTVR2TflN+KUb9N6orWoCH8oEwg8P5D/sY/LkaFM59CQkizopLiaHeXPv0cWrQ00tBg3t2ojC9IfpEVduzOhTOxQrxqap2+odaOQzPsbI1QEyL86Ewg8O+bzyFrz9+OfkKPpCnT+EzNDdp1sG7VxszQUENJST4vvzT93eeEuJcJcSnEYZ4kho3uumy1W71s5IiA8I2YQCAtPe/SuYTDe6KKS3iMZwdKFSRgmK29+Zpgd1tbQ9RyCI2SCQT4fOHz5xmXzj64cDqOy+XR5yxRThYkwWaz+w509PDq3aqVMYoKEBo9E0gIhHhqau6jh6mP4l/fu/0iJyufPmVDXkGhjaNlW6fm3Xq0tLUzruMpBwgIPyITqMQQCLncch6XLxQK5eTYCoqABRwOh41WFiD8XExAQPjuQANSCAiICQgIiAkICDD+L8AA8GBuM9BuADIAAAAASUVORK5CYII=" alt="Gymnasium Sacre Coeur Wien" class="bärand-logo-img">
+        <div class="brand">
+      <div class="brand-logo-card">
+        <img src="sacre_coeur_gym_logo.png" alt="Gymnasium Sacre Coeur Wien" class="brand-logo-img" onerror="this.onerror=null; this.src='sacre_coeur_logo.png';">
       </div>
-      <div class="bärand-text">
+      <div class="brand-text">
         <h1>SportPlaner</h1>
         <p>Gymnasium Sacre Coeur Wien &bull; Mag. Florian Tintel</p>
       </div>
@@ -1486,24 +1532,24 @@
 
     <!-- Header Actions -->
         <div class="header-actions">
-      <button class="btn btn-outline btn-sm no-print" onclick="forceAppRefresh()" title="App aktualisieren &amp; Cache leeren" style="border-color: rgba(255,255,255,0.4); color: white;">
+      <button class="btn btn-header-refresh no-print" onclick="forceAppRefresh()" title="App aktualisieren &amp; Cache leeren">
         <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         <span>Aktualisieren</span>
       </button>
       <div id="save-status-pill" class="save-pill saved no-print" style="display:none;">&#10003; Gespeichert</div>
-      <button class="btn btn-outline btn-sm no-print" onclick="openSavedLessonsModal()">
+      <button class="btn btn-outline btn-sm no-print btn-desktop-only" onclick="openSavedLessonsModal()">
         <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
         <span>Meine Stunden</span>
       </button>
-      <button class="btn btn-outline btn-sm no-print" onclick="openPwaInstallModal()" id="btn-pwa-install">
+      <button class="btn btn-outline btn-sm no-print btn-desktop-only" onclick="openPwaInstallModal()" id="btn-pwa-install">
         <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         <span>App installieren</span>
       </button>
-      <button class="btn btn-outline" onclick="loadPreset('leichtathletik_dreikampf')">
+      <button class="btn btn-outline btn-desktop-only" onclick="loadPreset('leichtathletik_dreikampf')">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M6.5 9l3.5 3.5 3-3 4.5 4.5"/><path d="M12 12.5v7.5"/></svg>
         <span>Musterstunde LA</span>
       </button>
-      <button class="btn btn-primary" onclick="printLesson()">
+      <button class="btn btn-primary btn-desktop-only" onclick="printLesson()">
         <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
         <span>Drucken / PDF</span>
       </button>
@@ -1594,14 +1640,14 @@
           <div class="form-group">
             <label>3. Fachbereich</label>
             <select id="gen-category" class="form-control" onchange="updateTopicsDropdown()">
-              <option value="leichtathletik" selected>🏃 Leichtathletik (Sprint, Sprung, Wurf, Ausdauer)</option>
-              <option value="ball">🏀 Große Sportspiele &amp; Trendsport (Basketball, Spikeball, Tchoukball)</option>
-              <option value="spiele">🎲 Kleine Spiele, Burner Games &amp; Kooperation</option>
-              <option value="motorik">🧠 Motorik &amp; Koordinative Fähigkeiten (Warwitz, Hirtz, Agility)</option>
-              <option value="fitness">⚡ Kraft, Fitness &amp; Zirkeltraining (Tabata, Hyrox Teens)</option>
-              <option value="turnen">🤸 Gerätturnen (Turn10), Akrobatik &amp; Parkour</option>
-              <option value="kampfklettern">🧗 Zweikampf, Bouldern / Klettern &amp; Ninja Warrior</option>
-              <option value="tests">📋 Motorische Diagnostik &amp; Leistungstests (Klug &amp; Fit, Schwimmen)</option>
+              <option value="leichtathletik" selected>Leichtathletik (Sprint, Sprung, Wurf, Ausdauer)</option>
+              <option value="ball">Große Sportspiele (Basketball, Volleyball, Fußball, Handball, Spikeball)</option>
+              <option value="spiele">Kleine Spiele, Burner Games &amp; Fangen</option>
+              <option value="motorik">Motorik &amp; Koordinative Fähigkeiten (Warwitz, Hirtz, Agility)</option>
+              <option value="fitness">Kraft, Fitness &amp; Zirkeltraining (Tabata, Hyrox Teens)</option>
+              <option value="turnen">Gerätturnen (Turn10), Akrobatik &amp; Parkour</option>
+              <option value="kampfklettern">Zweikampf, Bouldern &amp; Klettern (Ringen, Ninja Warrior)</option>
+              <option value="tests">Motorische Diagnostik &amp; Leistungstests (Klug &amp; Fit, Schwimmen)</option>
             </select>
           </div>
 
@@ -1672,7 +1718,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
           <div>
             <div style="font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <span>🔥 Neu: 100+ Instagram &amp; TikTok Hits &amp; 50+ Spiele 1. Kl. Gym!</span>
+              <span>Neu: 100+ Instagram &amp; TikTok Hits &amp; 50+ Spiele 1. Kl. Gym!</span>
             </div>
             <div style="font-size: 0.85rem; color: #bae6fd; margin-top: 4px;">
               Direkt zur Turnsaal-Datenbank springen oder mit 1 Klick als fertiges Stundenbild laden:
@@ -1680,10 +1726,10 @@
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
             <button class="btn btn-sm" onclick="jumpToSchwellenFilter('insta_hit')" style="background: #ec4899; color: white; border: none; font-weight: 700; border-radius: 8px; padding: 8px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(236,72,153,0.4);">
-              <span>📱</span> <span>100+ Instagram-Hits ansehen</span>
+              <span>100+ Instagram-Hits ansehen</span>
             </button>
             <button class="btn btn-sm" onclick="jumpToSchwellenFilter('neu_1klasse')" style="background: #f59e0b; color: #1e293b; border: none; font-weight: 700; border-radius: 8px; padding: 8px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(245,158,11,0.4);">
-              <span>⭐</span> <span>50+ Spiele 1. Klasse ansehen</span>
+              <span>50+ Spiele 1. Klasse ansehen</span>
             </button>
           </div>
         </div>
@@ -1699,13 +1745,13 @@
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
           <div class="exercise-card" style="cursor: pointer; border: 2px solid #ec4899; background: #fdf2f8;" onclick="loadPreset('insta_viral_hits')">
-            <span class="ex-badge" style="background:#ec4899; color:white;">📱 Social Media Hits</span>
+            <span class="ex-badge" style="background:#ec4899; color:white;">Social Media Hits</span>
             <div class="ex-title" style="color: #9d174d;">Musterstunde: Instagram &amp; TikTok Viral-Hits</div>
             <div class="ex-desc">Die besten 4 Trend-Spiele: RPS-Hoop-Showdown, Kurven-Kartenstaffel (@coachmartin), Dreiecks-Hütchenraub &amp; Blind-Roll.</div>
             <div class="ex-meta"><span class="ex-tag">Alle Schulstufen</span><span class="ex-tag">Hütchen, Reifen, Bälle</span></div>
           </div>
           <div class="exercise-card" style="cursor: pointer; border: 2px solid #f59e0b; background: #fffbeb;" onclick="loadPreset('klasse1_burner')">
-            <span class="ex-badge" style="background:#d97706; color:white;">⭐ 1. Klasse Gym</span>
+            <span class="ex-badge" style="background:#d97706; color:white;">1. Klasse Gym</span>
             <div class="ex-title" style="color: #92400e;">Musterstunde: Koedukatives Burner-Feuerwerk</div>
             <div class="ex-desc">Chinesische Mauer (Warm-Up), Burgensturm mit Hütchen, Chaos-Bälle (Auspowern) und Menschen-Memory (Ausklang).</div>
             <div class="ex-meta"><span class="ex-tag">1. Klasse Gym</span><span class="ex-tag">Bälle, Hütchen, 0 Frust</span></div>
@@ -2022,26 +2068,26 @@
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
           <div>
             <div style="font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <span>🚪⚡ Schwellenpädagogik: Sofort-Spiele für die Hallentür</span>
+              <span>Schwellenpädagogik: Sofort-Spiele für die Hallentür</span>
             </div>
             <div style="font-size: 0.83rem; color: #bae6fd; margin-top: 3px;">
               Du stehst im Turnsaal und brauchst in 10 Sekunden ein starkes Spiel? Klick deinen Schnellfilter:
             </div>
           </div>
           <button class="btn btn-sm" onclick="pickRandomSchwellenGame()" style="background: #f59e0b; color: #1e293b; font-weight: 700; border: none; border-radius: 8px; padding: 7px 16px; box-shadow: 0 2px 10px rgba(245,158,11,0.35); cursor: pointer; display: flex; align-items: center; gap: 6px;">
-            <span>🎲</span> <span>Spontan-Spiel („Überrasch mich!“)</span>
+            <span>Spontan-Spiel („Überrasch mich!“)</span>
           </button>
         </div>
 
                 <div class="schwellen-pills-wrap">
-          <button class="schwellen-pill active" data-schwellen="all" onclick="setSchwellenFilter('all', this)">⚡ Alle 500+ Einheiten</button>
-          <button class="schwellen-pill" data-schwellen="neu_1klasse" onclick="setSchwellenFilter('neu_1klasse', this)" style="border: 2px solid #fbbf24; background: rgba(251,191,36,0.18); font-weight: 800; color: #fff;">⭐ 50+ Neue Spiele (1. Klasse Gym)</button>
-          <button class="schwellen-pill" data-schwellen="insta_hit" onclick="setSchwellenFilter('insta_hit', this)" style="border: 2px solid #f472b6; background: rgba(244,114,182,0.18); font-weight: 800; color: #fff;">📱 100+ Instagram &amp; TikTok Viral-Hits</button>
-          <button class="schwellen-pill" data-schwellen="null_material" onclick="setSchwellenFilter('null_material', this)">🟢 0 Min. Aufbau (Null Material)</button>
-          <button class="schwellen-pill" data-schwellen="huetchen_reifen" onclick="setSchwellenFilter('huetchen_reifen', this)">🟡 Nur Hütchen &amp; Reifen</button>
-          <button class="schwellen-pill" data-schwellen="baelle" onclick="setSchwellenFilter('baelle', this)">🏐 Bälle &amp; Wurfspiele</button>
-          <button class="schwellen-pill" data-schwellen="high_intensity" onclick="setSchwellenFilter('high_intensity', this)">🔥 Puls hoch (Auspowern &amp; HIIT)</button>
-          <button class="schwellen-pill" data-schwellen="kooperation" onclick="setSchwellenFilter('kooperation', this)">🤝 Teambuilding &amp; Kooperation</button>
+          <button class="schwellen-pill active" data-schwellen="all" onclick="setSchwellenFilter('all', this)">Alle Einheiten (540+)</button>
+          <button class="schwellen-pill" data-schwellen="neu_1klasse" onclick="setSchwellenFilter('neu_1klasse', this)" style="border: 2px solid #fbbf24; background: rgba(251,191,36,0.18); font-weight: 800; color: #fff;">50+ Neue Spiele (1. Klasse Gym)</button>
+          <button class="schwellen-pill" data-schwellen="insta_hit" onclick="setSchwellenFilter('insta_hit', this)" style="border: 2px solid #f472b6; background: rgba(244,114,182,0.18); font-weight: 800; color: #fff;">100+ Instagram &amp; TikTok Viral-Hits</button>
+          <button class="schwellen-pill" data-schwellen="null_material" onclick="setSchwellenFilter('null_material', this)">0 Min. Aufbau (Null Material)</button>
+          <button class="schwellen-pill" data-schwellen="huetchen_reifen" onclick="setSchwellenFilter('huetchen_reifen', this)">Nur Hütchen &amp; Reifen</button>
+          <button class="schwellen-pill" data-schwellen="baelle" onclick="setSchwellenFilter('baelle', this)">Bälle &amp; Wurfspiele</button>
+          <button class="schwellen-pill" data-schwellen="high_intensity" onclick="setSchwellenFilter('high_intensity', this)">Puls hoch (Auspowern &amp; HIIT)</button>
+          <button class="schwellen-pill" data-schwellen="kooperation" onclick="setSchwellenFilter('kooperation', this)">Teambuilding &amp; Kooperation</button>
         </div>
       </div>
 
@@ -2060,73 +2106,76 @@
             <label>Spezifische Sportart</label>
             <select id="db-subcat-select" class="form-control" onchange="filterDatabase()">
               <option value="all" selected>-- Alle Sportarten &amp; Themen --</option>
-              <optgroup label="🏃 Leichtathletik">
+              <optgroup label="Leichtathletik">
                 <option value="sprint">Sprint, H&uuml;rden &amp; Staffellauf</option>
                 <option value="sprung">Weit- &amp; Hochsprung</option>
                 <option value="wurf">Wurf &amp; Sto&szlig; (Schlagball, Kugel)</option>
                 <option value="ausdauer">Ausdauer &amp; Gel&auml;ndelauf</option>
               </optgroup>
-              <optgroup label="🏀 Große Sportspiele">
+              <optgroup label="Große Sportspiele">
                 <option value="basketball">Basketball</option>
                 <option value="handball">Handball</option>
                 <option value="fussball">Fu&szlig;ball &amp; Futsal</option>
                 <option value="volleyball">Volleyball</option>
                 <option value="hockey">Floorball &amp; Hallenhockey</option>
               </optgroup>
-              <optgroup label="🏓 Rückschlag- &amp; Trendsportarten">
+              <optgroup label="Rückschlag- &amp; Trendsportarten">
                 <option value="spikeball">Spikeball / Roundnet</option>
                 <option value="tchoukball">Tchoukball (Rebound &amp; Fairplay)</option>
                 <option value="pickleball">Pickleball &amp; Street Racket</option>
                 <option value="badminton">Badminton &amp; Schl&auml;ger</option>
                 <option value="frisbee">Ultimate Frisbee &amp; Disc-Golf</option>
-                <option value="flagfootball">Flag-Football &amp; Touch-Rugby</option>
-                <option value="ringtennis">Ringtennis &amp; Tellerwurfspiele</option>
+                <option value="flagfootball">Flag Football &amp; Rugby Tag</option>
               </optgroup>
-              <optgroup label="🎲 Kleine Spiele &amp; Burner Games">
-                <option value="burnergames">Burner Games &amp; Fun-Warmups</option>
-                <option value="fangen">Fang- &amp; Reaktionsspiele</option>
-                <option value="abwurf">Abwurf- &amp; Zombieballspiele</option>
-                <option value="teamspiel">Kooperations- &amp; Abenteuerspiele</option>
+              <optgroup label="Kleine Spiele &amp; Burner Games">
+                <option value="fangen">Fang- &amp; Laufspiele</option>
+                <option value="abwurf">Abwurf- &amp; V&ouml;lkerballformen</option>
+                <option value="burnergames">Burner Games &amp; Hallenhits</option>
+                <option value="teamspiel">Kooperations- &amp; Vertrauensspiele</option>
               </optgroup>
-              <optgroup label="🧠 Koordination &amp; Motorik">
-                <option value="koordination_allg">Die 7 koordinativen F&auml;higkeiten (Hirtz)</option>
-                <option value="parcours">Wiener Parcours nach Warwitz</option>
-                <option value="gleichgewicht">Gleichgewicht &amp; Balancieren</option>
-                <option value="rhythmus">Rhythmus &amp; Rope Skipping</option>
-                <option value="differenzierung">Kin&auml;sthetische Differenzierung</option>
-                <option value="orientierung">Raumorientierung</option>
-                <option value="reaktion">Reaktion &amp; Umstellung</option>
-                <option value="kopplung">Kopplung &amp; Life Kinetik</option>
+              <optgroup label="Motorik &amp; Koordination">
+                <option value="differenzierung">Differenzierungsf&auml;higkeit</option>
+                <option value="orientierung">Orientierungsf&auml;higkeit</option>
+                <option value="reaktion">Reaktionsf&auml;higkeit</option>
+                <option value="rhythmus">Rhythmisierungsf&auml;higkeit</option>
+                <option value="gleichgewicht">Gleichgewichtsf&auml;higkeit</option>
               </optgroup>
-              <optgroup label="⚡ Kraft, Fitness &amp; Kondition">
-                <option value="zirkel">Zirkeltraining &amp; Tabata</option>
-                <option value="hyrox">Hyrox Teens &amp; Functional Fitness</option>
-                <option value="agility">Agility &amp; Koordinationsleiter</option>
-                <option value="medizinball">Medizinball &amp; Partnerkraft</option>
+              <optgroup label="Kraft, Fitness &amp; Ausdauer">
+                <option value="zirkel">Zirkel- &amp; Stationstraining</option>
+                <option value="tabata">Tabata &amp; HIIT</option>
+                <option value="core">Core- &amp; Rumpfstabilit&auml;t</option>
+                <option value="ausdauer">Ausdauer &amp; Intervall</option>
               </optgroup>
-              <optgroup label="🤸 Gerätturnen &amp; Akrobatik">
-                <option value="turn10">Turn10 (Boden, Barren, Reck, Kasten, Sprung)</option>
-                <option value="akrobatik">Partner- &amp; Gruppenpyramiden</option>
-                <option value="parkour">Parkour &amp; Freerunning Basics</option>
+              <optgroup label="Gerätturnen &amp; Akrobatik">
+                <option value="boden">Boden (Turn10)</option>
+                <option value="sprunggeraete">Kasten &amp; Sprung</option>
+                <option value="reck">Reck &amp; Stufenbarren</option>
+                <option value="balken">Schwebebalken &amp; B&auml;nke</option>
+                <option value="barren">Barren</option>
+                <option value="akrobatik">Partner- &amp; Gruppenakrobatik</option>
+                <option value="parkour">Parkour &amp; Hindernislauf</option>
               </optgroup>
-              <optgroup label="🧗 Zweikampf, Klettern &amp; Abenteuer">
-                <option value="kampf">Ringen, Raufen &amp; Zweikampf</option>
+              <optgroup label="Zweikampf, Bouldern &amp; Klettern">
+                <option value="zweikampf">Ringen &amp; Raufen (Normierte K&auml;mpfe)</option>
                 <option value="klettern">Hallenklettern, Bouldern &amp; Bergsteigen</option>
-                <option value="ninja">Ninja Warrior Challenge</option>
+              </optgroup>
+              <optgroup label="Motorische Tests &amp; Diagnostik">
+                <option value="klugfit">Klug &amp; Fit Testbatterie</option>
+                <option value="schwimmen">Schwimmabzeichen &amp; Technik</option>
               </optgroup>
             </select>
           </div>
 
           <div class="filter-section">
             <h4>Haupt-Kategorie</h4>
-            <label class="filter-item"><input type="radio" name="db-cat" value="all" checked onchange="onCategoryRadioChange()"> ⚡ Alle Kategorien</label>
-            <label class="filter-item"><input type="radio" name="db-cat" value="leichtathletik" onchange="onCategoryRadioChange()"> 🏃 Leichtathletik</label>
-            <label class="filter-item"><input type="radio" name="db-cat" value="ball" onchange="onCategoryRadioChange()"> 🏀 Große Sportspiele</label>
-            <label class="filter-item"><input type="radio" name="db-cat" value="spiele" onchange="onCategoryRadioChange()"> 🎲 Kleine Spiele &amp; Fangen</label>
-            <label class="filter-item"><input type="radio" name="db-cat" value="motorik" onchange="onCategoryRadioChange()"> 🧠 Koordination &amp; Motorik</label>
-            <label class="filter-item"><input type="radio" name="db-cat" value="fitness" onchange="onCategoryRadioChange()"> ⚡ Kraft &amp; Kondition</label>
-            <label class="filter-item"><input type="radio" name="db-cat" value="turnen" onchange="onCategoryRadioChange()"> 🤸 Gerätturnen &amp; Akrobatik</label>
-            <label class="filter-item"><input type="radio" name="db-cat" value="kampfklettern" onchange="onCategoryRadioChange()"> 🧗 Zweikampf &amp; Klettern</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="all" checked onchange="onCategoryRadioChange()"> Alle Kategorien</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="leichtathletik" onchange="onCategoryRadioChange()"> Leichtathletik</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="ball" onchange="onCategoryRadioChange()"> Große Sportspiele</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="spiele" onchange="onCategoryRadioChange()"> Kleine Spiele &amp; Fangen</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="motorik" onchange="onCategoryRadioChange()"> Koordination &amp; Motorik</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="fitness" onchange="onCategoryRadioChange()"> Kraft &amp; Kondition</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="turnen" onchange="onCategoryRadioChange()"> Gerätturnen &amp; Akrobatik</label>
+            <label class="filter-item"><input type="radio" name="db-cat" value="kampfklettern" onchange="onCategoryRadioChange()"> Zweikampf &amp; Klettern</label>
           </div>
 
           <div class="filter-section">
@@ -2157,8 +2206,8 @@
             
             <div style="display: flex; align-items: center; gap: 8px;">
               <div class="view-toggle-wrap" style="display: flex; background: #e2e8f0; border-radius: 8px; padding: 3px; gap: 3px;">
-                <button id="view-mode-cards" class="view-mode-btn active" onclick="setDbViewMode('cards')">🗂️ Detail-Karten</button>
-                <button id="view-mode-table" class="view-mode-btn" onclick="setDbViewMode('table')">📋 Kompakt-Tabelle (Auf einen Blick)</button>
+                <button id="view-mode-cards" class="view-mode-btn active" onclick="setDbViewMode('cards')">Detail-Karten</button>
+                <button id="view-mode-table" class="view-mode-btn" onclick="setDbViewMode('table')">Kompakt-Tabelle (Auf einen Blick)</button>
               </div>
             </div>
           </div>
@@ -11791,7 +11840,7 @@
       if (allCatRadio) allCatRadio.checked = true;
       
       renderDatabase();
-      showToast(`🎲 Spontan-Idee: "${lucky.title}" ausgewählt!`);
+      showToast(`Spontan-Idee: "${lucky.title}" ausgewählt!`);
 
       setTimeout(() => {
         const firstCard = document.querySelector('.exercise-card');
@@ -11933,7 +11982,7 @@
       container.innerHTML = '';
 
       if (filtered.length === 0) {
-        container.innerHTML = '<div style="grid-column: 1/-1; padding: 2.5rem; text-align: center; color: #64748b; background: white; border-radius: 8px; border: 1px dashed #cbd5e1; font-size: 0.95rem;">Keine Übungen mit diesen Kriterien gefunden.<br><button class="btn btn-primary btn-sm" style="margin-top: 10px;" onclick="resetDbFilter()">⚡ Alle Übungen anzeigen</button></div>';
+        container.innerHTML = '<div style="grid-column: 1/-1; padding: 2.5rem; text-align: center; color: #64748b; background: white; border-radius: 8px; border: 1px dashed #cbd5e1; font-size: 0.95rem;">Keine Übungen mit diesen Kriterien gefunden.<br><button class="btn btn-primary btn-sm" style="margin-top: 10px;" onclick="resetDbFilter()">Alle Übungen anzeigen</button></div>';
         return;
       }
 
@@ -11954,38 +12003,41 @@
               </thead>
               <tbody>
         `;
-        filtered.forEach((ex, idx) => {
-          let catIcon = '🏃';
-          if (ex.category === 'leichtathletik') catIcon = '🏃';
-          else if (ex.category === 'ball') catIcon = '🏀';
-          else if (ex.category === 'spiele') catIcon = '🎲';
-          else if (ex.category === 'motorik') catIcon = '🧠';
-          else if (ex.category === 'fitness') catIcon = '⚡';
-          else if (ex.category === 'turnen') catIcon = '🤸';
-          else if (ex.category === 'kampfklettern') catIcon = '🧗';
+        const catDisplayNames = {
+          'leichtathletik': 'Leichtathletik',
+          'ball': 'Große Sportspiele',
+          'spiele': 'Kleine Spiele & Fangen',
+          'motorik': 'Koordination & Motorik',
+          'fitness': 'Kraft & Kondition',
+          'turnen': 'Gerätturnen & Akrobatik',
+          'kampfklettern': 'Zweikampf & Klettern',
+          'tests': 'Motorische Tests'
+        };
 
+        filtered.forEach((ex, idx) => {
           let badges = '';
           const tags = ex.tags || [];
-          if (tags.includes('null_material')) badges += '<span style="font-size:0.68rem; background:#dcfce7; color:#15803d; padding:2px 6px; border-radius:10px; font-weight:700;">🟢 0 Min</span> ';
-          if (tags.includes('huetchen_reifen')) badges += '<span style="font-size:0.68rem; background:#fef3c7; color:#b45309; padding:2px 6px; border-radius:10px; font-weight:700;">🟡 Hütchen</span> ';
-          if (tags.includes('baelle')) badges += '<span style="font-size:0.68rem; background:#e0e7ff; color:#3730a3; padding:2px 6px; border-radius:10px; font-weight:700;">🏐 Ball</span> ';
-          if (tags.includes('high_intensity')) badges += '<span style="font-size:0.68rem; background:#fee2e2; color:#b91c1c; padding:2px 6px; border-radius:10px; font-weight:700;">🔥 HIIT</span> ';
-          if (tags.includes('insta_hit')) badges += '<span style="font-size:0.68rem; background:#f3e8ff; color:#7e22ce; padding:2px 6px; border-radius:10px; font-weight:700;">📱 Insta</span> ';
+          if (tags.includes('null_material')) badges += '<span style="font-size:0.68rem; background:#dcfce7; color:#15803d; padding:2px 6px; border-radius:10px; font-weight:700;">0 Min</span> ';
+          if (tags.includes('huetchen_reifen')) badges += '<span style="font-size:0.68rem; background:#fef3c7; color:#b45309; padding:2px 6px; border-radius:10px; font-weight:700;">Hütchen</span> ';
+          if (tags.includes('baelle')) badges += '<span style="font-size:0.68rem; background:#e0e7ff; color:#3730a3; padding:2px 6px; border-radius:10px; font-weight:700;">Ball</span> ';
+          if (tags.includes('high_intensity')) badges += '<span style="font-size:0.68rem; background:#fee2e2; color:#b91c1c; padding:2px 6px; border-radius:10px; font-weight:700;">HIIT</span> ';
+          if (tags.includes('insta_hit')) badges += '<span style="font-size:0.68rem; background:#f3e8ff; color:#7e22ce; padding:2px 6px; border-radius:10px; font-weight:700;">Insta</span> ';
+          if (tags.includes('1klasse_koed')) badges += '<span style="font-size:0.68rem; background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:10px; font-weight:700;">1. Klasse</span> ';
 
           const bgRow = (idx % 2 === 0) ? '#ffffff' : '#f8fafc';
           tableHtml += `
             <tr style="background: ${bgRow};">
               <td style="font-weight: 700; color: #94a3b8;">${idx + 1}</td>
               <td>
-                <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">${catIcon} ${ex.title}</div>
-                <div style="font-size: 0.75rem; color: #0284c7; font-weight: 600; margin-top: 2px;">🎯 ${ex.goal}</div>
+                <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">${ex.title}</div>
+                <div style="font-size: 0.75rem; color: #0284c7; font-weight: 600; margin-top: 2px;">Ziel: ${ex.goal}</div>
                 <div style="margin-top: 4px;">${badges}</div>
               </td>
               <td>
-                <span style="font-size: 0.78rem; background: #f1f5f9; padding: 3px 8px; border-radius: 6px; font-weight: 600; color: #334155; display: inline-block;">🎒 ${ex.material}</span>
-                <div style="font-size: 0.72rem; color: #64748b; margin-top: 3px;">👥 ${ex.org}</div>
+                <span style="font-size: 0.78rem; background: #f1f5f9; padding: 3px 8px; border-radius: 6px; font-weight: 600; color: #334155; display: inline-block;">${ex.material}</span>
+                <div style="font-size: 0.72rem; color: #64748b; margin-top: 3px;">Gruppe: ${ex.org}</div>
               </td>
-              <td style="white-space: nowrap; font-weight: 700; color: #475569;">⏱️ ${ex.duration} min</td>
+              <td style="white-space: nowrap; font-weight: 700; color: #475569;">${ex.duration} min</td>
               <td style="line-height: 1.45; color: #334155;">
                 <div style="font-size: 0.85rem;">${ex.desc}</div>
                 <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;"><strong>Tipp:</strong> ${ex.cues || 'Saubere Ausführung'}</div>
@@ -12003,19 +12055,31 @@
         container.style.display = 'grid';
       }
 
+      const catDisplayNames = {
+        'leichtathletik': 'Leichtathletik',
+        'ball': 'Große Sportspiele',
+        'spiele': 'Kleine Spiele & Fangen',
+        'motorik': 'Koordination & Motorik',
+        'fitness': 'Kraft & Kondition',
+        'turnen': 'Gerätturnen & Akrobatik',
+        'kampfklettern': 'Zweikampf & Klettern',
+        'tests': 'Motorische Tests'
+      };
+
       filtered.forEach(ex => {
         const card = document.createElement('div');
         card.className = 'exercise-card';
         
         let badgeColor = 'background:#0284c7; color:white;';
-        let catIcon = '🏃';
-        if (ex.category === 'leichtathletik') { badgeColor = 'background:#0284c7; color:white;'; catIcon = '🏃'; }
-        else if (ex.category === 'ball') { badgeColor = 'background:#059669; color:white;'; catIcon = '🏀'; }
-        else if (ex.category === 'spiele') { badgeColor = 'background:#d97706; color:white;'; catIcon = '🎲'; }
-        else if (ex.category === 'motorik') { badgeColor = 'background:#0891b2; color:white;'; catIcon = '🧠'; }
-        else if (ex.category === 'fitness') { badgeColor = 'background:#4f46e5; color:white;'; catIcon = '⚡'; }
-        else if (ex.category === 'turnen') { badgeColor = 'background:#7c3aed; color:white;'; catIcon = '🤸'; }
-        else if (ex.category === 'kampfklettern') { badgeColor = 'background:#0d9488; color:white;'; catIcon = '🧗'; }
+        if (ex.category === 'leichtathletik') { badgeColor = 'background:#0284c7; color:white;'; }
+        else if (ex.category === 'ball') { badgeColor = 'background:#059669; color:white;'; }
+        else if (ex.category === 'spiele') { badgeColor = 'background:#d97706; color:white;'; }
+        else if (ex.category === 'motorik') { badgeColor = 'background:#0891b2; color:white;'; }
+        else if (ex.category === 'fitness') { badgeColor = 'background:#4f46e5; color:white;'; }
+        else if (ex.category === 'turnen') { badgeColor = 'background:#7c3aed; color:white;'; }
+        else if (ex.category === 'kampfklettern') { badgeColor = 'background:#0d9488; color:white;'; }
+
+        const catTitle = catDisplayNames[ex.category] || (ex.category ? ex.category.toUpperCase() : 'ALLGEMEIN');
 
         let tagBadgesHtml = '';
         const tags = ex.tags || [];
@@ -12023,38 +12087,38 @@
         const ref = (ex.ref || '').toLowerCase();
         
         if (tags.includes('null_material') || mat.includes('ohne') || mat.includes('keine') || mat.includes('0 min')) {
-          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center; gap:3px;">🟢 0 Min Aufbau</span> ';
+          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center;">0 Min Aufbau</span> ';
         }
         if (tags.includes('huetchen_reifen') || mat.includes('hütchen') || mat.includes('reifen')) {
-          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#fef3c7; color:#b45309; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center; gap:3px;">🟡 Hütchen/Reifen</span> ';
+          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#fef3c7; color:#b45309; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center;">Hütchen/Reifen</span> ';
         }
         if (tags.includes('baelle') || mat.includes('ball') || ex.category === 'ball') {
-          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#e0e7ff; color:#3730a3; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center; gap:3px;">🏐 Ballspiel</span> ';
+          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#e0e7ff; color:#3730a3; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center;">Ballspiel</span> ';
         }
         if (tags.includes('high_intensity') || ex.category === 'fitness') {
-          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#fee2e2; color:#b91c1c; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center; gap:3px;">🔥 Puls hoch</span> ';
+          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#fee2e2; color:#b91c1c; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center;">Puls hoch</span> ';
         }
         if (tags.includes('insta_hit') || ref.includes('instagram') || ref.includes('tiktok')) {
-          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#f3e8ff; color:#7e22ce; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center; gap:3px;">📱 Insta-Hit</span> ';
+          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#f3e8ff; color:#7e22ce; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center;">Insta-Hit</span> ';
         }
         if (tags.includes('1klasse_koed') || ex.ageGroup === 'unterstufe' || ex.ageGroup === 'alle') {
-          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center; gap:3px;">🎒 1. Kl. Gym</span> ';
+          tagBadgesHtml += '<span style="font-size:0.7rem; font-weight:700; background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:12px; display:inline-flex; align-items:center;">1. Kl. Gym</span> ';
         }
 
         card.innerHTML = `
           <div>
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span class="ex-badge" style="${badgeColor}">${catIcon} ${ex.category.toUpperCase()}</span>
-              <span style="font-size:0.78rem; color:#475569; font-weight:700;">⏱️ ${ex.duration} min</span>
+              <span class="ex-badge" style="${badgeColor}">${catTitle}</span>
+              <span style="font-size:0.78rem; color:#475569; font-weight:700;">${ex.duration} min</span>
             </div>
             <div class="ex-title" style="font-size:1.02rem; margin:7px 0 4px 0;">${ex.title}</div>
-            <div style="font-size:0.8rem; font-weight:700; color:#0284c7; margin-bottom:5px;">🎯 ${ex.goal}</div>
+            <div style="font-size:0.8rem; font-weight:700; color:#0284c7; margin-bottom:5px;">Ziel: ${ex.goal}</div>
             <div class="ex-desc" style="font-size:0.86rem; line-height:1.45; color:#334155; margin-bottom:8px;">${ex.desc}</div>
             <div class="ex-meta" style="margin-top:6px;">
               <div style="width:100%; margin-bottom:6px; display:flex; flex-wrap:wrap; gap:4px;">${tagBadgesHtml}</div>
-              <span class="ex-tag">📍 Phase: ${ex.phase.toUpperCase()}</span>
-              <span class="ex-tag">🎒 Geräte: ${ex.material}</span>
-              <span class="ex-tag">👥 Gruppe: ${ex.org}</span>
+              <span class="ex-tag">Phase: ${ex.phase.toUpperCase()}</span>
+              <span class="ex-tag">Geräte: ${ex.material}</span>
+              <span class="ex-tag">Gruppe: ${ex.org}</span>
             </div>
           </div>
           <div class="ex-actions" style="margin-top:10px; border-top:1px solid #f1f5f9; padding-top:8px; display:flex; justify-content:space-between; align-items:center;">
@@ -13530,7 +13594,7 @@
     } else {
       initSportPlaner();
     }
-      // Auto-remove third-party hosting bäranding bars
+      // Auto-remove third-party hosting branding bars
     function removeBärandingBars() {
       document.querySelectorAll('[id*="tiiny"], [class*="tiiny"], a[href*="tiiny.host"], iframe[src*="tiiny"]').forEach(el => {
         try { el.remove(); } catch(e) {}

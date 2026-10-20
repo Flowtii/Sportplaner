@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sportplaner-sc-v8';
+const CACHE_NAME = 'sportplaner-sc-v10';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -7,7 +7,10 @@ const ASSETS_TO_CACHE = [
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
-  './apple-touch-icon.png'
+  './apple-touch-icon.png',
+  './sacre_coeur_gym_logo.png',
+  './sacre_coeur_logo.png',
+  './sacre_coeur_herz.png'
 ];
 
 // Install: Cache initial files & skip waiting immediately
