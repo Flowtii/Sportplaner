@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sportplaner-sc-v6';
+const CACHE_NAME = 'sportplaner-sc-v7';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -23,11 +23,12 @@ self.addEventListener('install', (event) => {
 // Activate: Cleanup old caches & claim clients immediately
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log('[SW] Clearing old cache:', cache);
+            return caches.delete(cache);
           }
         })
       );
@@ -35,38 +36,38 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch: Network-First for HTML (so updates appear immediately), Cache-First for static assets
+// Fetch: Network first, fallback to cache for HTML, Cache-first for images
 self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
+  const url = new URL(event.request.url);
 
-  const isHtml = event.request.mode === 'navigate' || 
-                 (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html')) ||
-                 event.request.url.endsWith('.html') || 
-                 event.request.url.endsWith('/');
-
-  if (isHtml) {
-    // Network-First with Cache Fallback for offline gym use
+  // HTML / App navigation: Network First (always get newest lesson updates if online)
+  if (event.request.mode === 'navigate' || event.request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(event.request)
-        .then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const copy = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        .then((response) => {
+          if (response && response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
           }
-          return networkResponse;
+          return response;
         })
-        .catch(() => caches.match(event.request))
+        .catch(() => {
+          return caches.match('./index.html') || caches.match(event.request);
+        })
     );
     return;
   }
 
-  // Cache-First for images and static assets
+  // Assets (images, icons, manifest): Cache First
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request).then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200) {
-          const copy = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
         }
         return networkResponse;
       });
