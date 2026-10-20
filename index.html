@@ -1667,6 +1667,28 @@
         </div>
       </div>
 
+            <!-- Prominenter Quick-Launch Banner fuer neue Spiele & Instagram -->
+      <div class="card" style="background: linear-gradient(135deg, #002B49 0%, #0369a1 100%); color: white; border: none; margin-bottom: 1.2rem; box-shadow: 0 4px 15px rgba(2,132,199,0.25);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <div style="font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+              <span>🔥 Neu: 100+ Instagram &amp; TikTok Hits &amp; 50+ Spiele 1. Kl. Gym!</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #bae6fd; margin-top: 4px;">
+              Direkt zur Turnsaal-Datenbank springen oder mit 1 Klick als fertiges Stundenbild laden:
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn btn-sm" onclick="jumpToSchwellenFilter('insta_hit')" style="background: #ec4899; color: white; border: none; font-weight: 700; border-radius: 8px; padding: 8px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(236,72,153,0.4);">
+              <span>📱</span> <span>100+ Instagram-Hits ansehen</span>
+            </button>
+            <button class="btn btn-sm" onclick="jumpToSchwellenFilter('neu_1klasse')" style="background: #f59e0b; color: #1e293b; border: none; font-weight: 700; border-radius: 8px; padding: 8px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(245,158,11,0.4);">
+              <span>⭐</span> <span>50+ Spiele 1. Klasse ansehen</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Schnellauswahl bewaehrter Einheiten -->
       <div class="card">
         <div class="card-header">
@@ -1676,6 +1698,19 @@
           </div>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+          <div class="exercise-card" style="cursor: pointer; border: 2px solid #ec4899; background: #fdf2f8;" onclick="loadPreset('insta_viral_hits')">
+            <span class="ex-badge" style="background:#ec4899; color:white;">📱 Social Media Hits</span>
+            <div class="ex-title" style="color: #9d174d;">Musterstunde: Instagram &amp; TikTok Viral-Hits</div>
+            <div class="ex-desc">Die besten 4 Trend-Spiele: RPS-Hoop-Showdown, Kurven-Kartenstaffel (@coachmartin), Dreiecks-Hütchenraub &amp; Blind-Roll.</div>
+            <div class="ex-meta"><span class="ex-tag">Alle Schulstufen</span><span class="ex-tag">Hütchen, Reifen, Bälle</span></div>
+          </div>
+          <div class="exercise-card" style="cursor: pointer; border: 2px solid #f59e0b; background: #fffbeb;" onclick="loadPreset('klasse1_burner')">
+            <span class="ex-badge" style="background:#d97706; color:white;">⭐ 1. Klasse Gym</span>
+            <div class="ex-title" style="color: #92400e;">Musterstunde: Koedukatives Burner-Feuerwerk</div>
+            <div class="ex-desc">Chinesische Mauer (Warm-Up), Burgensturm mit Hütchen, Chaos-Bälle (Auspowern) und Menschen-Memory (Ausklang).</div>
+            <div class="ex-meta"><span class="ex-tag">1. Klasse Gym</span><span class="ex-tag">Bälle, Hütchen, 0 Frust</span></div>
+          </div>
+
           <div class="exercise-card" style="cursor: pointer;" onclick="loadPreset('leichtathletik_dreikampf')">
             <span class="ex-badge" style="background:#0284c7; color:white;">Leichtathletik</span>
             <div class="ex-title">Dreikampf: Laufen, Springen &amp; Werfen</div>
@@ -2777,7 +2812,7 @@
     </button>
     <button class="mob-nav-item" onclick="switchTab('database')">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <span>&Uuml;bungen</span>
+      <span>&Uuml;bungen (540+)</span>
     </button>
     <button class="mob-nav-item" onclick="openSavedLessonsModal()">
       <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
@@ -11526,7 +11561,19 @@
         CURRENT_LESSON.phases.main1 = EXERCISE_DATABASE.find(e => e.id === 'ka_m1_sockenringen');
         CURRENT_LESSON.phases.main2 = EXERCISE_DATABASE.find(e => e.id === 'ka_m1_schildkroete');
         CURRENT_LESSON.phases.cool = EXERCISE_DATABASE.find(e => e.id === 'la_c_reflexion_zeiten');
-      } else if (presetKey === 'hyrox_teens') {
+            } else if (presetKey === 'insta_viral_hits') {
+        CURRENT_LESSON.meta.thema = "Social Media & Viral-Hits: Die besten Instagram & TikTok Games";
+        CURRENT_LESSON.phases.warmup = EXERCISE_DATABASE.find(e => e.id === 'insta_rps_hoop_showdown') || EXERCISE_DATABASE.find(e => e.tags && e.tags.includes('insta_hit'));
+        CURRENT_LESSON.phases.main1 = EXERCISE_DATABASE.find(e => e.id === 'insta_kurven_kartenstaffel') || EXERCISE_DATABASE.find(e => e.id === 'insta_vier_gewinnt_huetchen');
+        CURRENT_LESSON.phases.main2 = EXERCISE_DATABASE.find(e => e.id === 'insta_dreiecks_huetchenraub') || EXERCISE_DATABASE.find(e => e.id === 'insta_cone_ball_push') || EXERCISE_DATABASE.find(e => e.id === 'insta_hungry_hippos');
+        CURRENT_LESSON.phases.cool = EXERCISE_DATABASE.find(e => e.id === 'insta_blind_ball_roll') || EXERCISE_DATABASE.find(e => e.id === 'insta_rettungsinsel_kollaps');
+      } else if (presetKey === 'klasse1_burner') {
+        CURRENT_LESSON.meta.thema = "1. Klasse Gym: Koedukative Burner & Kennenlern-Games";
+        CURRENT_LESSON.phases.warmup = EXERCISE_DATABASE.find(e => e.id === 'schwell_chinesische_mauer') || EXERCISE_DATABASE.find(e => e.id === 'la_w_lauf_abc');
+        CURRENT_LESSON.phases.main1 = EXERCISE_DATABASE.find(e => e.id === 'schwell_burgensturm') || EXERCISE_DATABASE.find(e => e.id === 'schwell_turmball');
+        CURRENT_LESSON.phases.main2 = EXERCISE_DATABASE.find(e => e.id === 'hiit_chaos_baelle') || EXERCISE_DATABASE.find(e => e.id === 'schwell_zombieball');
+        CURRENT_LESSON.phases.cool = EXERCISE_DATABASE.find(e => e.id === 'schwell_menschen_memory') || EXERCISE_DATABASE.find(e => e.id === 'schwell_stille_reihe');
+} else if (presetKey === 'hyrox_teens') {
         CURRENT_LESSON.meta.thema = "Hyrox Teens: Functional Fitness Challenge & Team-Relay";
         CURRENT_LESSON.phases.warmup = EXERCISE_DATABASE.find(e => e.id === 'fit_w_hyrox_rampup');
         CURRENT_LESSON.phases.main1 = EXERCISE_DATABASE.find(e => e.id === 'fit_m1_hyrox_stationen');
@@ -11671,6 +11718,16 @@
       currentSchwellenFilter = 'all';
       updatePillsUI('all');
       renderDatabase();
+    }
+
+    
+    function jumpToSchwellenFilter(filterTag) {
+      switchTab('database');
+      setSchwellenFilter(filterTag);
+      setTimeout(() => {
+        const el = document.getElementById('db-count-badge');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
     }
 
     function setSchwellenFilter(tag, btnElement) {
@@ -12498,15 +12555,25 @@
       }
     }
 
-        function forceAppRefresh() {
-      if ('serviceWorker' in navigator && window.caches) {
+            function forceAppRefresh() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(regs => {
+          for (let reg of regs) {
+            reg.update();
+            reg.unregister();
+          }
+        });
+      }
+      if (window.caches) {
         caches.keys().then(keys => {
           return Promise.all(keys.map(k => caches.delete(k)));
         }).then(() => {
-          window.location.reload(true);
+          const freshUrl = window.location.origin + window.location.pathname + '?reload=' + Date.now();
+          window.location.replace(freshUrl);
         });
       } else {
-        window.location.reload(true);
+        const freshUrl = window.location.origin + window.location.pathname + '?reload=' + Date.now();
+        window.location.replace(freshUrl);
       }
     }
     function openSavedLessonsModal() {

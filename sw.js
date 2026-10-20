@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sportplaner-sc-v7';
+const CACHE_NAME = 'sportplaner-sc-v8';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
